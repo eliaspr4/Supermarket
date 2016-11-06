@@ -20,12 +20,18 @@ public class MainView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuItem1 = new javax.swing.JMenuItem();
         jPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jmb_menu = new javax.swing.JMenuBar();
         jm_options = new javax.swing.JMenu();
         jmi_customers = new javax.swing.JMenuItem();
         jmi_salida = new javax.swing.JMenuItem();
+        jm_files = new javax.swing.JMenu();
+        jmi_login = new javax.swing.JMenuItem();
+        jmi_users = new javax.swing.JMenuItem();
+
+        jMenuItem1.setText("jMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 150, 136));
@@ -60,6 +66,8 @@ public class MainView extends javax.swing.JFrame {
         jm_options.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/catalog.png"))); // NOI18N
         jm_options.setText("Catálogo");
         jm_options.setActionCommand("Menú  principal de la  tienda");
+        jm_options.setBorderPainted(false);
+        jm_options.setContentAreaFilled(false);
         jm_options.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         jmi_customers.setBackground(new java.awt.Color(0, 102, 255));
@@ -89,6 +97,31 @@ public class MainView extends javax.swing.JFrame {
 
         jmb_menu.add(jm_options);
 
+        jm_files.setBackground(new java.awt.Color(0, 102, 255));
+        jm_files.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/folder.png"))); // NOI18N
+        jm_files.setText("Archivos");
+        jm_files.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+
+        jmi_login.setBackground(new java.awt.Color(0, 102, 255));
+        jmi_login.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/login (1).png"))); // NOI18N
+        jmi_login.setText("Iniciar sesión");
+        jm_files.add(jmi_login);
+
+        jmi_users.setBackground(new java.awt.Color(0, 102, 255));
+        jmi_users.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/people.png"))); // NOI18N
+        jmi_users.setText("Usuarios");
+        jmi_users.setBorder(null);
+        jmi_users.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_usersActionPerformed(evt);
+            }
+        });
+        jm_files.add(jmi_users);
+
+        jmb_menu.add(jm_files);
+
         setJMenuBar(jmb_menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -112,6 +145,10 @@ public class MainView extends javax.swing.JFrame {
     private void jmi_salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_salidaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_salidaActionPerformed
+
+    private void jmi_usersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_usersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_usersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,10 +187,14 @@ public class MainView extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel;
+    public javax.swing.JMenu jm_files;
     private javax.swing.JMenu jm_options;
     private javax.swing.JMenuBar jmb_menu;
     public javax.swing.JMenuItem jmi_customers;
+    public javax.swing.JMenuItem jmi_login;
     public javax.swing.JMenuItem jmi_salida;
+    public javax.swing.JMenuItem jmi_users;
     // End of variables declaration//GEN-END:variables
 }

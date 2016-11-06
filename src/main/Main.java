@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] epr) {
         LoginModel loginModel = new LoginModel();
         LoginView  loginView = new  LoginView();
         LoginController loginController = new LoginController (loginModel, loginView);
