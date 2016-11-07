@@ -26,6 +26,8 @@ public class MainView extends javax.swing.JFrame {
         jmb_menu = new javax.swing.JMenuBar();
         jm_options = new javax.swing.JMenu();
         jmi_customers = new javax.swing.JMenuItem();
+        jmi_proveedores = new javax.swing.JMenuItem();
+        jmi_productos = new javax.swing.JMenuItem();
         jmi_salida = new javax.swing.JMenuItem();
         jm_files = new javax.swing.JMenu();
         jmi_login = new javax.swing.JMenuItem();
@@ -62,11 +64,9 @@ public class MainView extends javax.swing.JFrame {
 
         jm_options.setBackground(new java.awt.Color(0, 102, 255));
         jm_options.setBorder(null);
-        jm_options.setForeground(new java.awt.Color(204, 204, 204));
         jm_options.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/catalog.png"))); // NOI18N
         jm_options.setText("Catálogo");
         jm_options.setActionCommand("Menú  principal de la  tienda");
-        jm_options.setBorderPainted(false);
         jm_options.setContentAreaFilled(false);
         jm_options.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
@@ -76,13 +76,23 @@ public class MainView extends javax.swing.JFrame {
         jmi_customers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/customer-service.png"))); // NOI18N
         jmi_customers.setText("Clientes");
         jmi_customers.setBorder(null);
-        jmi_customers.setBorderPainted(false);
         jmi_customers.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_customersActionPerformed(evt);
             }
         });
         jm_options.add(jmi_customers);
+
+        jmi_proveedores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jmi_proveedores.setForeground(new java.awt.Color(204, 204, 204));
+        jmi_proveedores.setText("Proveedores");
+        jm_options.add(jmi_proveedores);
+
+        jmi_productos.setBackground(new java.awt.Color(204, 204, 204));
+        jmi_productos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jmi_productos.setForeground(new java.awt.Color(204, 204, 204));
+        jmi_productos.setText("Productos");
+        jm_options.add(jmi_productos);
 
         jmi_salida.setBackground(new java.awt.Color(0, 102, 255));
         jmi_salida.setForeground(new java.awt.Color(204, 204, 204));
@@ -194,6 +204,8 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmb_menu;
     public javax.swing.JMenuItem jmi_customers;
     public javax.swing.JMenuItem jmi_login;
+    public javax.swing.JMenuItem jmi_productos;
+    public javax.swing.JMenuItem jmi_proveedores;
     public javax.swing.JMenuItem jmi_salida;
     public javax.swing.JMenuItem jmi_users;
     // End of variables declaration//GEN-END:variables
