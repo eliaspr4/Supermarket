@@ -5,7 +5,7 @@ import epr.MyConnection;
 import javax.swing.table.DefaultTableModel;
 
 public class Model_Productos {
-    private int IDproductos;    
+    private int IDproducto;    
     private String producto;
     
     private String descripcion;
@@ -28,7 +28,7 @@ public class Model_Productos {
     }
 
     public void setValues() {
-        IDproductos = connection.getInteger("id_productos");
+        IDproducto = connection.getInteger("id_producto");
         producto = connection.getString("producto");
         descripcion = connection.getString("descripcion");
         precio_compra = connection.getInteger("precio_compra");
@@ -67,13 +67,13 @@ public class Model_Productos {
     }
     
     public void editProducto(int IDproducto, String producto, String descripcion, int precio_compra, int precio_venta, int existencias){
-        String edit = "update productos set producto ='"+producto+"', descripcion ='"+descripcion+"', precio_compra ='"+precio_compra+"', precio_venta ='"+precio_venta+"', existencias ='"+existencias+"'" + "where id_productos =" +IDproductos;
+        String edit = "update productos set producto ='"+producto+"', descripcion ='"+descripcion+"', precio_compra ='"+precio_compra+"', precio_venta ='"+precio_venta+"', existencias ='"+existencias+"'" + "where id_productos =" +IDproducto;
         connection.executeUpdate(edit);
         initValues();
     }
     
-    public void removeProductos(int IDproductos) {
-        String remove = "delete from productos where id_producto=" +IDproductos;
+    public void removeProductos(int IDproducto) {
+        String remove = "delete from productos where id_producto=" +IDproducto;
         connection.executeUpdate(remove);      
         initValues();
     }
@@ -85,25 +85,27 @@ public class Model_Productos {
     }
     
     public void populateTable() {
-        Object fields[] = new Object[]{IDproductos, producto, descripcion, precio_compra, precio_venta, existencias};
+        Object fields[] = new Object[]{IDproducto, producto, descripcion, precio_compra, precio_venta, existencias};
         while(connection.toNext()) {            
-            tableModel.addRow(fields);
             setValues();
+           tableModel.addRow(new Object[]{IDproducto, producto, descripcion, precio_compra, precio_venta, existencias});
+        
+        
         }
     }
 
     /**
      * @return the IDproductos
      */
-    public int getIDproductos() {
-        return IDproductos;
+    public int getIDproducto() {
+        return IDproducto;
     }
 
     /**
-     * @param IDproductos the IDproductos to set
+     * @param IDproducto the IDproductos to set
      */
-    public void setIDproductos(int IDproductos) {
-        this.IDproductos = IDproductos;
+    public void setIDproducto(int IDproducto) {
+        this.IDproducto = IDproducto;
     }
 
     /**

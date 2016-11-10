@@ -4,7 +4,7 @@ import java.sql.ResultSet;
 import epr.MyConnection;
 import javax.swing.table.DefaultTableModel;
 
-public class CustomersModel {
+public class ClientesModel {
     int customerID;    
     int number;
     
@@ -189,10 +189,11 @@ public void initValues() {
     }
     
     public void populateTable() {
-        Object fields[] = new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state};
-        while(connection.toNext()) {            
-            tableModel.addRow(fields);
+         Object fields[] = new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state};                       
+        tableModel.addRow(fields);
+        while(connection.toNext()) {       
             setValues();
+            tableModel.addRow(new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state});
         }
     }
 }

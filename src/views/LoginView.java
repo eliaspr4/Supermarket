@@ -9,7 +9,7 @@ package views;
  *
  * @author Elias Pujol R
  */
-public class LoginView extends javax.swing.JFrame {
+public class LoginView extends javax.swing.JPanel {
 
     /**
      * Creates new form LoginView
@@ -27,125 +27,97 @@ public class LoginView extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jbtn_login = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jbtn_login = new javax.swing.JButton();
-        jtf_username = new javax.swing.JTextField();
-        jpf_password = new javax.swing.JPasswordField();
-        jbtn_cancel = new javax.swing.JButton();
+        jtf_usuario = new javax.swing.JTextField();
+        jpf_contraseña = new javax.swing.JPasswordField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jLabel4.setText("jLabel4");
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setBackground(new java.awt.Color(255, 255, 255));
+        setFont(new java.awt.Font("Tekton Pro", 0, 12)); // NOI18N
+        setLayout(null);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Login_Basic_Flat.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 210));
-
-        jLabel2.setFont(new java.awt.Font("Hobo Std", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user.png"))); // NOI18N
-        jLabel2.setText("Nombre de usuario:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Hobo Std", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 0, 0));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/password.png"))); // NOI18N
-        jLabel3.setText("Contraseña:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 150, -1));
-
-        jbtn_login.setBackground(new java.awt.Color(255, 255, 255));
-        jbtn_login.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 14)); // NOI18N
-        jbtn_login.setForeground(new java.awt.Color(0, 0, 0));
-        jbtn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/login.png"))); // NOI18N
+        jbtn_login.setBackground(new java.awt.Color(153, 0, 145));
+        jbtn_login.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        jbtn_login.setForeground(new java.awt.Color(255, 255, 255));
+        jbtn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Login Rounded Down-48.png"))); // NOI18N
         jbtn_login.setText("Ingresar");
+        jbtn_login.setAutoscrolls(true);
         jbtn_login.setBorder(null);
+        jbtn_login.setBorderPainted(false);
         jbtn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_loginActionPerformed(evt);
             }
         });
-        jPanel1.add(jbtn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, -1, -1));
+        add(jbtn_login);
+        jbtn_login.setBounds(130, 360, 280, 48);
 
-        jtf_username.setBackground(new java.awt.Color(204, 204, 204));
-        jtf_username.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jtf_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 170, -1));
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user.png"))); // NOI18N
+        jLabel2.setText("Nombre de usuario");
+        add(jLabel2);
+        jLabel2.setBounds(20, 220, 160, 60);
 
-        jpf_password.setBackground(new java.awt.Color(204, 204, 204));
-        jpf_password.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jpf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 170, -1));
+        jLabel3.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Forgot Password-48.png"))); // NOI18N
+        jLabel3.setText("Contraseña");
+        add(jLabel3);
+        jLabel3.setBounds(10, 290, 170, 40);
 
-        jbtn_cancel.setBackground(new java.awt.Color(255, 255, 255));
-        jbtn_cancel.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 1, 14)); // NOI18N
-        jbtn_cancel.setForeground(new java.awt.Color(0, 0, 0));
-        jbtn_cancel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/close.png.png"))); // NOI18N
-        jbtn_cancel.setText("Cancelar");
-        jbtn_cancel.setBorder(null);
-        jPanel1.add(jbtn_cancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 90, 30));
+        jtf_usuario.setBackground(new java.awt.Color(255, 255, 255));
+        jtf_usuario.setForeground(new java.awt.Color(0, 0, 0));
+        jtf_usuario.setBorder(null);
+        add(jtf_usuario);
+        jtf_usuario.setBounds(180, 240, 220, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 406, Short.MAX_VALUE)
-        );
+        jpf_contraseña.setBackground(new java.awt.Color(255, 255, 255));
+        jpf_contraseña.setForeground(new java.awt.Color(0, 0, 0));
+        jpf_contraseña.setBorder(null);
+        jpf_contraseña.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jpf_contraseñaActionPerformed(evt);
+            }
+        });
+        add(jpf_contraseña);
+        jpf_contraseña.setBounds(180, 290, 220, 30);
 
-        pack();
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/a08ee8eb3108d8c6ae69437113b22447.jpg"))); // NOI18N
+        add(jLabel6);
+        jLabel6.setBounds(0, 200, 420, 310);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Login_Basic_Flat.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        add(jLabel1);
+        jLabel1.setBounds(0, 0, 450, 200);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_loginActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtn_loginActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(LoginView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void jpf_contraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jpf_contraseñaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jpf_contraseñaActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new LoginView().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    public javax.swing.JPanel jPanel1;
-    public javax.swing.JButton jbtn_cancel;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     public javax.swing.JButton jbtn_login;
-    public javax.swing.JPasswordField jpf_password;
-    public javax.swing.JTextField jtf_username;
+    public javax.swing.JPasswordField jpf_contraseña;
+    public javax.swing.JTextField jtf_usuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,15 +1,30 @@
 
+
 package models;
-import  java.sql.ResultSet;
+
 import epr.MyConnection;
 
 
+
 public class LoginModel {
-   String  username;
-   String  password;
+
+  public  String  name;
+  public  String  username;
+  public String   password;
+  public String level;
+  public String status;
   
-   
+  
+  
    MyConnection connection = new MyConnection(3306, "localhost", "acme_store", "root", "");
+  public String getName() {
+       
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getUsername() {
         return username;
@@ -27,16 +42,45 @@ public class LoginModel {
         this.password = password;
     }
 
+    public String getLevel() {
+        return level;
+    }
+
+    public void setLevel(String level) {
+        this.level = level;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+ 
+  
+   
+
+   
+
     
 public void initValues() {
-        String sql = "select * from usersLogin";
+        String sql = "select * from login";
         connection.executeQuery(sql);
+        connection.toNext();
     }
   
-  public void setValues(){
-   
-      username = connection.getString("username");
-      password = connection.getString("password");
+  public boolean login(String username, String password){
+      boolean isAble = false;
+      String login = "select * from login where usuario = '"+username+"' and contrasena = '"+password+"';";
+      connection.executeQuery(login);
+      connection.toNext();
+      status = connection.getString("estado");
+      if (username.equals(connection.getString("usuario"))&& password.equals(connection.getString("contrasena"))&& status.equals("Activo")){
+          isAble = true;
+          level = connection.getString("nivel");
+      }
+      return isAble;
   }
      
       

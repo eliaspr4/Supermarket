@@ -3,7 +3,7 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="99" green="33" red="0" type="rgb"/>
+      <Color blue="99" green="66" red="0" type="rgb"/>
     </Property>
     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -43,9 +43,11 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jtf_descripcion" min="-2" pref="183" max="-2" attributes="0"/>
-                          <Component id="jtf_precio_compra" min="-2" pref="232" max="-2" attributes="0"/>
-                          <Component id="jtf_existencias" min="-2" pref="255" max="-2" attributes="0"/>
+                          <Component id="jtf_descripcion" min="-2" pref="214" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jtf_existencias" alignment="0" pref="74" max="32767" attributes="0"/>
+                              <Component id="jtf_precio_compra" alignment="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
@@ -53,7 +55,7 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" pref="82" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jtf_precio_venta" min="-2" pref="180" max="-2" attributes="0"/>
+                              <Component id="jtf_precio_venta" min="-2" pref="74" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -63,8 +65,8 @@
                               </Group>
                               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jtf_id" min="-2" pref="119" max="-2" attributes="0"/>
                                   <Component id="jtf_producto" min="-2" pref="214" max="-2" attributes="0"/>
+                                  <Component id="jtf_id" min="-2" pref="67" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>

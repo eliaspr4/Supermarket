@@ -3,7 +3,7 @@
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="99" green="33" red="0" type="rgb"/>
+      <Color blue="99" green="66" red="0" type="rgb"/>
     </Property>
     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
       <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -12,6 +12,9 @@
           <Color PropertyName="color" blue="ff" green="ff" red="ff" type="rgb"/>
         </TitledBorder>
       </Border>
+    </Property>
+    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="0" green="0" red="0" type="rgb"/>
     </Property>
   </Properties>
   <AccessibilityProperties>
@@ -43,7 +46,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jtf_id" min="-2" pref="119" max="-2" attributes="0"/>
+                                      <Component id="jtf_id" min="-2" pref="74" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="0" attributes="0">
@@ -55,7 +58,7 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jLabel5" min="-2" pref="82" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jtf_calle" min="-2" pref="180" max="-2" attributes="0"/>
+                                              <Component id="jtf_calle" min="-2" pref="214" max="-2" attributes="0"/>
                                           </Group>
                                           <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -66,14 +69,14 @@
                                                   <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jtf_nombre_contacto" min="-2" pref="261" max="-2" attributes="0"/>
-                                                  <Component id="jtf_email" min="-2" pref="261" max="-2" attributes="0"/>
-                                                  <Component id="jtf_telefono" min="-2" pref="261" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="jtf_telefono" alignment="0" pref="214" max="32767" attributes="0"/>
+                                                  <Component id="jtf_nombre_contacto" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="jtf_email" max="32767" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="-2" pref="104" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jbtn_find" max="32767" attributes="0"/>
                                           <Component id="jbtn_add" max="32767" attributes="0"/>
@@ -91,30 +94,15 @@
                       <Component id="jLabel4" min="-2" pref="82" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="jtf_rfc" min="-2" pref="183" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jtf_estado" min="-2" pref="261" max="-2" attributes="0"/>
-                                          <Component id="jtf_numero" alignment="0" min="-2" pref="232" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace pref="268" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jtf_ciudad" min="-2" pref="160" max="-2" attributes="0"/>
-                                          <Component id="jtf_colonia" min="-2" pref="255" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jtf_rfc" min="-2" pref="214" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jtf_estado" alignment="0" pref="214" max="32767" attributes="0"/>
+                              <Component id="jtf_ciudad" max="32767" attributes="0"/>
+                              <Component id="jtf_colonia" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jtf_numero" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">

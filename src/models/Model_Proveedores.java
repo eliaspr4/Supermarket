@@ -97,8 +97,9 @@ public class Model_Proveedores {
     public void populateTable() {
         Object fields[] = new Object[]{IDproveedor, nombre, calle, numero, colonia, email, rfc, ciudad, estado, nombre_contacto, email};
         while(connection.toNext()) {            
-            tableModel.addRow(fields);
             setValues();
+              tableModel.addRow(new Object[]{IDproveedor, nombre, calle, numero, colonia, email, rfc, ciudad, estado, nombre_contacto, email });
+      
         }
     }
 

@@ -76,10 +76,12 @@ create table if not exists detalleCompras (
 	precio float(6) not null 	
 );
 
-create table if not exists usersLogin (
-         id_user smallint (5) not null auto_increment primary key,
-         username varchar(30) not null,
-         password varchar(20) not null,
+create table if not exists login (
+         nombre varchar(30) not null primary key,
+         usuario varchar (30)not null,
+         contrasena varchar(20) not null,
+         nivel varchar (20)not null,
+         estado varchar (20)not null
 
 );
 
@@ -105,3 +107,5 @@ values('Salsa catsup', 'Salsa de tomate la costena', '10.50', '21.50', '321');
 insert into productos(producto, descripcion, precio_compra, precio_venta, existencias)
 values('Galletas amaranto', 'Galletas surtidas de amaranto con chocolate', '12.50', '36.50', '30');
 
+insert into login (nombre, usuario, contrasena, nivel, estado)
+values ('Calamardo', 'spongebob', 'sammy', 'Admin', 'Activo');

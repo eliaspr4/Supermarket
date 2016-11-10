@@ -4,14 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
-import models.CustomersModel;
+import models.ClientesModel;
 import views.CustomersView;
 
-public class CustomersController implements ActionListener {
-    CustomersModel customersModel;
+public class ClientesController implements ActionListener {
+    ClientesModel customersModel;
     CustomersView customersView;
 
-    public CustomersController(CustomersModel customersModel, CustomersView customersView) {
+    public ClientesController(ClientesModel customersModel, CustomersView customersView) {
         this.customersModel = customersModel;
         this.customersView = customersView;
         this.customersView.jtf_id.setVisible(false);
@@ -130,6 +130,7 @@ public class CustomersController implements ActionListener {
         int customerID = Integer.parseInt(customersView.jtf_id.getText());
          customersModel.removeCustomer(customerID);
         customersModel.setValues();
+        
         showValues();
     }
     

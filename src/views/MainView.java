@@ -59,20 +59,21 @@ public class MainView extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        jmb_menu.setBackground(new java.awt.Color(0, 102, 255));
+        jmb_menu.setBackground(new java.awt.Color(51, 102, 255));
         jmb_menu.setBorder(null);
 
         jm_options.setBackground(new java.awt.Color(0, 102, 255));
         jm_options.setBorder(null);
+        jm_options.setForeground(new java.awt.Color(51, 51, 51));
         jm_options.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/catalog.png"))); // NOI18N
         jm_options.setText("Catálogo");
         jm_options.setActionCommand("Menú  principal de la  tienda");
         jm_options.setContentAreaFilled(false);
         jm_options.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
-        jmi_customers.setBackground(new java.awt.Color(0, 102, 255));
+        jmi_customers.setBackground(new java.awt.Color(255, 255, 255));
         jmi_customers.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jmi_customers.setForeground(new java.awt.Color(204, 204, 204));
+        jmi_customers.setForeground(new java.awt.Color(51, 51, 51));
         jmi_customers.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/customer-service.png"))); // NOI18N
         jmi_customers.setText("Clientes");
         jmi_customers.setBorder(null);
@@ -83,21 +84,30 @@ public class MainView extends javax.swing.JFrame {
         });
         jm_options.add(jmi_customers);
 
+        jmi_proveedores.setBackground(new java.awt.Color(255, 255, 255));
         jmi_proveedores.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jmi_proveedores.setForeground(new java.awt.Color(204, 204, 204));
+        jmi_proveedores.setForeground(new java.awt.Color(51, 51, 51));
+        jmi_proveedores.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/hotel-supplier.png"))); // NOI18N
         jmi_proveedores.setText("Proveedores");
+        jmi_proveedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_proveedoresActionPerformed(evt);
+            }
+        });
         jm_options.add(jmi_proveedores);
 
-        jmi_productos.setBackground(new java.awt.Color(204, 204, 204));
+        jmi_productos.setBackground(new java.awt.Color(255, 255, 255));
         jmi_productos.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jmi_productos.setForeground(new java.awt.Color(204, 204, 204));
+        jmi_productos.setForeground(new java.awt.Color(51, 51, 51));
+        jmi_productos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/products.png"))); // NOI18N
         jmi_productos.setText("Productos");
         jm_options.add(jmi_productos);
 
-        jmi_salida.setBackground(new java.awt.Color(0, 102, 255));
-        jmi_salida.setForeground(new java.awt.Color(204, 204, 204));
-        jmi_salida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/exit.png"))); // NOI18N
-        jmi_salida.setText("Salir");
+        jmi_salida.setBackground(new java.awt.Color(255, 255, 255));
+        jmi_salida.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_salida.setForeground(new java.awt.Color(51, 51, 51));
+        jmi_salida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Close Window-48.png"))); // NOI18N
+        jmi_salida.setText("Cerrar sesión");
         jmi_salida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_salidaActionPerformed(evt);
@@ -108,17 +118,18 @@ public class MainView extends javax.swing.JFrame {
         jmb_menu.add(jm_options);
 
         jm_files.setBackground(new java.awt.Color(0, 102, 255));
+        jm_files.setForeground(new java.awt.Color(51, 51, 51));
         jm_files.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/folder.png"))); // NOI18N
         jm_files.setText("Archivos");
         jm_files.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
-        jmi_login.setBackground(new java.awt.Color(0, 102, 255));
+        jmi_login.setBackground(new java.awt.Color(255, 255, 255));
         jmi_login.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/login (1).png"))); // NOI18N
         jmi_login.setText("Iniciar sesión");
         jm_files.add(jmi_login);
 
-        jmi_users.setBackground(new java.awt.Color(0, 102, 255));
+        jmi_users.setBackground(new java.awt.Color(255, 255, 255));
         jmi_users.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/people.png"))); // NOI18N
         jmi_users.setText("Usuarios");
@@ -160,6 +171,10 @@ public class MainView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_usersActionPerformed
 
+    private void jmi_proveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_proveedoresActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_proveedoresActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -200,7 +215,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel;
     public javax.swing.JMenu jm_files;
-    private javax.swing.JMenu jm_options;
+    public javax.swing.JMenu jm_options;
     private javax.swing.JMenuBar jmb_menu;
     public javax.swing.JMenuItem jmi_customers;
     public javax.swing.JMenuItem jmi_login;

@@ -57,7 +57,7 @@ public class Controller_Productos implements ActionListener {
     }
     
     public void showValues() {
-        view_productos.jtf_id.setText("" + model_productos.getIDproductos());
+        view_productos.jtf_id.setText("" + model_productos.getIDproducto());
         view_productos.jtf_producto.setText(model_productos.getProducto());
         view_productos.jtf_descripcion.setText(model_productos.getDescripcion());
         view_productos.jtf_precio_venta.setText("" + model_productos.getPrecio_venta());
