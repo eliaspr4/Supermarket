@@ -38,11 +38,11 @@ public class LoginView extends javax.swing.JPanel {
 
         jLabel4.setText("jLabel4");
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(0, 0, 0));
         setFont(new java.awt.Font("Tekton Pro", 0, 12)); // NOI18N
         setLayout(null);
 
-        jbtn_login.setBackground(new java.awt.Color(153, 0, 145));
+        jbtn_login.setBackground(new java.awt.Color(102, 0, 102));
         jbtn_login.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
         jbtn_login.setForeground(new java.awt.Color(255, 255, 255));
         jbtn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Login Rounded Down-48.png"))); // NOI18N
@@ -97,8 +97,9 @@ public class LoginView extends javax.swing.JPanel {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Login_Basic_Flat.png"))); // NOI18N
         jLabel1.setText("jLabel1");
+        jLabel1.setPreferredSize(new java.awt.Dimension(503, 503));
         add(jLabel1);
-        jLabel1.setBounds(0, 0, 450, 200);
+        jLabel1.setBounds(0, 0, 420, 200);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_loginActionPerformed

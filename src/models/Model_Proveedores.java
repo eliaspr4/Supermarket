@@ -71,7 +71,11 @@ public class Model_Proveedores {
                             String estado, String nombre_contacto, int telefono, String email) {
         String add = "insert into proveedores (nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email)"
                    + "values ('"+nombre+"', '"+rfc+"', '"+calle+"', '"+numero+"', '"+colonia+"', '"+ciudad+"', '"+estado+"', '"+nombre_contacto+"', '"+telefono+"', '"+email+"');";
-        connection.executeUpdate(add);        
+        connection.executeUpdate(add); 
+        
+         setValues();
+              tableModel.addRow(new Object[]{IDproveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto,telefono, email });
+      
         initValues();
     }
     
@@ -79,12 +83,16 @@ public class Model_Proveedores {
                              String ciudad, String estado, String nombre_contacto, int telefono, String email) {
         String edit = "update proveedores set nombre ='"+nombre+"', rfc ='"+rfc+"', calle ='"+calle+"', numero ='"+numero+"', colonia ='"+colonia+"', ciudad ='"+ciudad+"', estado ='"+estado+"', nombre_contacto ='"+nombre_contacto+"', telefono ='"+telefono+"', email ='"+email+"'" + "where id_proveedor =" +IDproveedor;
         connection.executeUpdate(edit);
+         setValues();
+              tableModel.addRow(new Object[]{IDproveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto,telefono, email });
+      
         initValues();
     }
     
     public void removeProveedor(int IDproveedor) {
         String remove = "delete from proveedores where id_proveedor=" +IDproveedor;
-        connection.executeUpdate(remove);      
+        connection.executeUpdate(remove);
+         
         initValues();
     }
     
@@ -95,10 +103,10 @@ public class Model_Proveedores {
     }
     
     public void populateTable() {
-        Object fields[] = new Object[]{IDproveedor, nombre, calle, numero, colonia, email, rfc, ciudad, estado, nombre_contacto, email};
+        Object fields[] = new Object[]{IDproveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto,telefono, email};
         while(connection.toNext()) {            
             setValues();
-              tableModel.addRow(new Object[]{IDproveedor, nombre, calle, numero, colonia, email, rfc, ciudad, estado, nombre_contacto, email });
+              tableModel.addRow(new Object[]{IDproveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto,telefono, email });
       
         }
     }

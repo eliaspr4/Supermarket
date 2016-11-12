@@ -165,7 +165,9 @@ public void initValues() {
                             String street, int number, String suburb, String city, String state) {
         String add = "insert into clientes (nombre, ap_paterno, ap_materno, telefono, email, rfc, calle, numero, colonia, ciudad, estado)"
                    + "values ('"+name+"', '"+surname1+"', '"+surname2+"', '"+phone+"', '"+email+"', '"+rfc+"', '"+street+"', '"+number+"', '"+suburb+"', '"+city+"', '"+state+"');";
-        connection.executeUpdate(add);        
+        connection.executeUpdate(add);
+         setValues();
+            tableModel.addRow(new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state});
         initValues();
     }
     
@@ -173,12 +175,17 @@ public void initValues() {
                              String rfc, String street, int number, String suburb, String city, String state) {
         String edit = "update clientes set nombre ='"+name+"', ap_paterno ='"+surname1+"', ap_materno ='"+surname2+"', telefono ='"+phone+"', email ='"+email+"', rfc ='"+rfc+"', calle ='"+street+"', numero ='"+number+"', colonia ='"+suburb+"', ciudad ='"+city+"', estado ='"+state+"'" + "where id_cliente =" +customerID;
         connection.executeUpdate(edit);
+        setValues();
+            tableModel.addRow(new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state});
         initValues();
     }
     
     public void removeCustomer(int customerID) {
         String remove = "delete from clientes where id_cliente=" +customerID;
-        connection.executeUpdate(remove);      
+        connection.executeUpdate(remove);
+        tableModel.removeRow(-1);
+        
+        
         initValues();
     }
     

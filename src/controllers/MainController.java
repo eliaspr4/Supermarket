@@ -81,7 +81,7 @@ public class MainController implements ActionListener {
 
    
 public void close() {
-        int confirm = JOptionPane.showConfirmDialog(null, "¿Desea salir del  punto de venta?", "Aviso", JOptionPane.YES_NO_OPTION);
+        int confirm = JOptionPane.showConfirmDialog(null, "¿Desea cerrar sesión?", "Aviso", JOptionPane.YES_NO_OPTION);
         if(confirm == JOptionPane.YES_OPTION)
             System.exit(0);
     }

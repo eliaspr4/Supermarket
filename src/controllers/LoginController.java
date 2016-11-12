@@ -45,9 +45,13 @@ public class LoginController implements ActionListener{
         if(loginModel.login(username, password)) {
             JOptionPane.showMessageDialog(null, "Bienvenido al sistema de punto de venta");
         mainView.jmi_login.setEnabled(false);
-            if(loginModel.level.equals("Admin")) {
+            if(loginModel.level.equals("Admin")); {
                 mainView.jm_options.setEnabled(true);
                 mainView.jmi_users.setEnabled(true);
+             if(loginModel.level.equals("Usuario frecuente"));{
+                mainView.jm_options.setEnabled(true);
+                mainView.jmi_users.setEnabled(true);
+            }   
             }
         }
         else {

@@ -109,3 +109,5 @@ values('Galletas amaranto', 'Galletas surtidas de amaranto con chocolate', '12.5
 
 insert into login (nombre, usuario, contrasena, nivel, estado)
 values ('Calamardo', 'spongebob', 'sammy', 'Admin', 'Activo');
+insert into login (nombre, usuario, contrasena, nivel, estado)
+values ('Yadira', 'yadiragolosa69', 'weed', 'Usuario Frecuente', 'Activo');

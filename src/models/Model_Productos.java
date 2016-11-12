@@ -62,19 +62,25 @@ public class Model_Productos {
       public void addProducto(String producto, String descripcion, int precio_compra, int precio_venta, int existencias){
         String add = "insert into productos (producto, descripcion, precio_compra, precio_venta, existencias)"
                    + "values ('"+producto+"', '"+descripcion+"', '"+precio_compra+"', '"+precio_venta+"', '"+existencias+"');";
-        connection.executeUpdate(add);        
+        connection.executeUpdate(add);
+        setValues();
+           tableModel.addRow(new Object[]{IDproducto, producto, descripcion, precio_compra, precio_venta, existencias});
+        
         initValues();
     }
     
     public void editProducto(int IDproducto, String producto, String descripcion, int precio_compra, int precio_venta, int existencias){
         String edit = "update productos set producto ='"+producto+"', descripcion ='"+descripcion+"', precio_compra ='"+precio_compra+"', precio_venta ='"+precio_venta+"', existencias ='"+existencias+"'" + "where id_productos =" +IDproducto;
         connection.executeUpdate(edit);
+        setValues();
+           tableModel.addRow(new Object[]{IDproducto, producto, descripcion, precio_compra, precio_venta, existencias});
         initValues();
     }
     
     public void removeProductos(int IDproducto) {
         String remove = "delete from productos where id_producto=" +IDproducto;
-        connection.executeUpdate(remove);      
+        connection.executeUpdate(remove); 
+       
         initValues();
     }
     

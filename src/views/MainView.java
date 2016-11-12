@@ -24,14 +24,14 @@ public class MainView extends javax.swing.JFrame {
         jPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jmb_menu = new javax.swing.JMenuBar();
+        jm_files = new javax.swing.JMenu();
+        jmi_login = new javax.swing.JMenuItem();
+        jmi_users = new javax.swing.JMenuItem();
         jm_options = new javax.swing.JMenu();
         jmi_customers = new javax.swing.JMenuItem();
         jmi_proveedores = new javax.swing.JMenuItem();
         jmi_productos = new javax.swing.JMenuItem();
         jmi_salida = new javax.swing.JMenuItem();
-        jm_files = new javax.swing.JMenu();
-        jmi_login = new javax.swing.JMenuItem();
-        jmi_users = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -61,6 +61,34 @@ public class MainView extends javax.swing.JFrame {
 
         jmb_menu.setBackground(new java.awt.Color(51, 102, 255));
         jmb_menu.setBorder(null);
+
+        jm_files.setBackground(new java.awt.Color(0, 102, 255));
+        jm_files.setForeground(new java.awt.Color(51, 51, 51));
+        jm_files.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/folder.png"))); // NOI18N
+        jm_files.setText("Archivos");
+        jm_files.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+
+        jmi_login.setBackground(new java.awt.Color(255, 255, 255));
+        jmi_login.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_login.setForeground(new java.awt.Color(51, 51, 51));
+        jmi_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/login (1).png"))); // NOI18N
+        jmi_login.setText("Iniciar sesión");
+        jm_files.add(jmi_login);
+
+        jmi_users.setBackground(new java.awt.Color(255, 255, 255));
+        jmi_users.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_users.setForeground(new java.awt.Color(51, 51, 51));
+        jmi_users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/people.png"))); // NOI18N
+        jmi_users.setText("Usuarios");
+        jmi_users.setBorder(null);
+        jmi_users.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_usersActionPerformed(evt);
+            }
+        });
+        jm_files.add(jmi_users);
+
+        jmb_menu.add(jm_files);
 
         jm_options.setBackground(new java.awt.Color(0, 102, 255));
         jm_options.setBorder(null);
@@ -116,32 +144,6 @@ public class MainView extends javax.swing.JFrame {
         jm_options.add(jmi_salida);
 
         jmb_menu.add(jm_options);
-
-        jm_files.setBackground(new java.awt.Color(0, 102, 255));
-        jm_files.setForeground(new java.awt.Color(51, 51, 51));
-        jm_files.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/folder.png"))); // NOI18N
-        jm_files.setText("Archivos");
-        jm_files.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-
-        jmi_login.setBackground(new java.awt.Color(255, 255, 255));
-        jmi_login.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jmi_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/login (1).png"))); // NOI18N
-        jmi_login.setText("Iniciar sesión");
-        jm_files.add(jmi_login);
-
-        jmi_users.setBackground(new java.awt.Color(255, 255, 255));
-        jmi_users.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jmi_users.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/people.png"))); // NOI18N
-        jmi_users.setText("Usuarios");
-        jmi_users.setBorder(null);
-        jmi_users.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmi_usersActionPerformed(evt);
-            }
-        });
-        jm_files.add(jmi_users);
-
-        jmb_menu.add(jm_files);
 
         setJMenuBar(jmb_menu);
 
