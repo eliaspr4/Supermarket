@@ -16,6 +16,7 @@ public class MainController implements ActionListener {
     CustomersView customersView;
     View_Proveedores view_proveedores;
     View_Productos view_productos;
+    View_Usuarios  view_usuarios;
     
     JPanel paneArray [];
 
@@ -29,6 +30,7 @@ public class MainController implements ActionListener {
         this.mainView.jmi_salida.addActionListener(this);
         this.mainView.jmi_proveedores.addActionListener(this);
         this.mainView.jmi_productos.addActionListener(this);
+        this.mainView.jmi_users.addActionListener(this);
         
         initView();
         
@@ -46,6 +48,8 @@ public class MainController implements ActionListener {
              proveedoresPane();
         else if(x.getSource()== mainView.jmi_productos)
              productosPane();
+        else if(x.getSource()==mainView.jmi_users)
+            usersPane();
     }
     
     public void initView() {
@@ -79,12 +83,18 @@ public class MainController implements ActionListener {
         mainView.repaint();
     }
 
-   
+   private void usersPane() {
+        mainView.setContentPane(paneArray[4]);
+        mainView.revalidate();
+        mainView.repaint();
+    }
 public void close() {
         int confirm = JOptionPane.showConfirmDialog(null, "¿Desea cerrar sesión?", "Aviso", JOptionPane.YES_NO_OPTION);
         if(confirm == JOptionPane.YES_OPTION)
             System.exit(0);
     }
+
+    
 
 
 }

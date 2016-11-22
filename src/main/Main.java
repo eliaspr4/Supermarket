@@ -1,4 +1,5 @@
 
+
 package main;
 
 import models.*;
@@ -14,7 +15,11 @@ public class Main {
 
   
         LoginModel loginModel = new LoginModel();
-        LoginView  loginView = new  LoginView();    
+        LoginView  loginView = new  LoginView();  
+        
+        UsuariosModel usuariosModel = new UsuariosModel();
+        View_Usuarios view_Usuarios = new View_Usuarios();
+        UsuariosController usuariosController = new UsuariosController(usuariosModel,view_Usuarios);
         
         ClientesModel customersModel = new ClientesModel();
         CustomersView customersView = new CustomersView();
@@ -28,12 +33,12 @@ public class Main {
         View_Productos view_productos = new View_Productos();
         Controller_Productos controller_productos = new Controller_Productos(model_productos, view_productos);
         
-        JPanel paneArray[] = new JPanel[4];
+        JPanel paneArray[] = new JPanel[5];
         paneArray[0] = loginView;
         paneArray[1] = customersView;
         paneArray[2] = view_proveedores;
         paneArray[3] = view_productos;
-       
+        paneArray[4] = view_Usuarios;
         
         
         MainModel mainModel = new MainModel();
@@ -41,5 +46,6 @@ public class Main {
         MainController mainController = new MainController(mainModel, mainView, paneArray);
         
         LoginController loginController = new LoginController (loginModel, loginView, mainView);
+        
     } 
 }

@@ -56,7 +56,7 @@ public class LoginView extends javax.swing.JPanel {
             }
         });
         add(jbtn_login);
-        jbtn_login.setBounds(130, 360, 280, 48);
+        jbtn_login.setBounds(70, 380, 280, 48);
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N

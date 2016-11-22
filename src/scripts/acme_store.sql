@@ -85,6 +85,14 @@ create table if not exists login (
 
 );
 
+create table if not exists usuarios (
+         nombre varchar(30) not null primary key,
+         usuario varchar (30)not null,
+         contrasena varchar(20) not null,
+         nivel varchar (20)not null,
+         estado varchar (20)not null
+
+);
 
 insert into clientes(nombre, ap_paterno, ap_materno, telefono, email, rfc, calle, numero, colonia, ciudad, estado)
 values('Mayra', 'Vargas', 'Cruz', '7759571638', 'cuau5@hotmail.com', '2394574103', 'Nogales', '210', 'Estrella', 'Tulancingo', 'Hidalgo');
@@ -111,3 +119,8 @@ insert into login (nombre, usuario, contrasena, nivel, estado)
 values ('Calamardo', 'spongebob', 'sammy', 'Admin', 'Activo');
 insert into login (nombre, usuario, contrasena, nivel, estado)
 values ('Yadira', 'yadiragolosa69', 'weed', 'Usuario Frecuente', 'Activo');
+
+insert into usuarios (nombre, usuario, contrasena, nivel, estado)
+values ('Calamardo', 'spongebob', 'sammy', 'Admin', 'Activo');
+insert into usuarios (nombre, usuario, contrasena, nivel, estado)
+values ('Alejandro', 'Cangreburger66', '1234', 'Usuario Frecuente', 'Activo');

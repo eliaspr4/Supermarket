@@ -161,6 +161,7 @@ public void initValues() {
         setValues();
     }
     
+      
       public void addCustomer(String name, String surname1, String surname2, String phone, String email, String rfc,
                             String street, int number, String suburb, String city, String state) {
         String add = "insert into clientes (nombre, ap_paterno, ap_materno, telefono, email, rfc, calle, numero, colonia, ciudad, estado)"

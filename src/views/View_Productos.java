@@ -47,48 +47,48 @@ public class View_Productos extends javax.swing.JPanel {
         jbtn_find = new javax.swing.JButton();
         jbtn_last = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 102, 153));
+        setBackground(new java.awt.Color(255, 153, 153));
         setBorder(javax.swing.BorderFactory.createTitledBorder(null, "PRODUCTOS\n", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 3, 18), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("ID Producto");
 
-        jtf_id.setBackground(new java.awt.Color(153, 153, 153));
+        jtf_id.setBackground(new java.awt.Color(255, 255, 255));
         jtf_id.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_id.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_id.setForeground(new java.awt.Color(0, 0, 0));
         jtf_id.setBorder(null);
 
         jLabel3.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Descripcion");
 
-        jtf_producto.setBackground(new java.awt.Color(153, 153, 153));
+        jtf_producto.setBackground(new java.awt.Color(255, 255, 255));
         jtf_producto.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_producto.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_producto.setForeground(new java.awt.Color(0, 0, 0));
         jtf_producto.setBorder(null);
 
         jLabel4.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Precio Venta");
 
-        jtf_descripcion.setBackground(new java.awt.Color(153, 153, 153));
+        jtf_descripcion.setBackground(new java.awt.Color(255, 255, 255));
         jtf_descripcion.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_descripcion.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_descripcion.setForeground(new java.awt.Color(0, 0, 0));
         jtf_descripcion.setBorder(null);
 
         jLabel5.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Precio Compra");
 
-        jtf_precio_venta.setBackground(new java.awt.Color(153, 153, 153));
+        jtf_precio_venta.setBackground(new java.awt.Color(255, 255, 255));
         jtf_precio_venta.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_precio_venta.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_precio_venta.setForeground(new java.awt.Color(0, 0, 0));
         jtf_precio_venta.setBorder(null);
 
-        jtf_precio_compra.setBackground(new java.awt.Color(153, 153, 153));
+        jtf_precio_compra.setBackground(new java.awt.Color(255, 255, 255));
         jtf_precio_compra.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_precio_compra.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_precio_compra.setForeground(new java.awt.Color(0, 0, 0));
         jtf_precio_compra.setBorder(null);
 
         jLabel6.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
@@ -99,9 +99,9 @@ public class View_Productos extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Producto");
 
-        jtf_existencias.setBackground(new java.awt.Color(153, 153, 153));
+        jtf_existencias.setBackground(new java.awt.Color(255, 255, 255));
         jtf_existencias.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
-        jtf_existencias.setForeground(new java.awt.Color(255, 255, 255));
+        jtf_existencias.setForeground(new java.awt.Color(0, 0, 0));
         jtf_existencias.setBorder(null);
 
         jScrollPane1.setBorder(null);

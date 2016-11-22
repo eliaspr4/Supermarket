@@ -48,24 +48,22 @@ public class MainView extends javax.swing.JFrame {
         jPanelLayout.setHorizontalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         jPanelLayout.setVerticalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, Short.MAX_VALUE)
         );
 
         jmb_menu.setBackground(new java.awt.Color(51, 102, 255));
         jmb_menu.setBorder(null);
+        jmb_menu.setPreferredSize(new java.awt.Dimension(202, 45));
 
         jm_files.setBackground(new java.awt.Color(0, 102, 255));
         jm_files.setForeground(new java.awt.Color(51, 51, 51));
-        jm_files.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/folder.png"))); // NOI18N
-        jm_files.setText("Archivos");
+        jm_files.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home_32.png"))); // NOI18N
+        jm_files.setText("Inicio");
         jm_files.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
 
         jmi_login.setBackground(new java.awt.Color(255, 255, 255));
@@ -134,7 +132,7 @@ public class MainView extends javax.swing.JFrame {
         jmi_salida.setBackground(new java.awt.Color(255, 255, 255));
         jmi_salida.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_salida.setForeground(new java.awt.Color(51, 51, 51));
-        jmi_salida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Close Window-48.png"))); // NOI18N
+        jmi_salida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Close Window-30.png"))); // NOI18N
         jmi_salida.setText("Cerrar sesión");
         jmi_salida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
