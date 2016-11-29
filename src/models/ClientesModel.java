@@ -1,6 +1,6 @@
 package models;
 
-import java.sql.ResultSet;
+
 import epr.MyConnection;
 import javax.swing.table.DefaultTableModel;
 
@@ -161,14 +161,31 @@ public void initValues() {
         setValues();
     }
     
+      public void populateTable() {
+        String table = "select * from clientes";
+        connection.executeQuery(table);
+        connection.toNext();
+        for(int i = 0; i < tableModel.getRowCount(); i++) {
+            tableModel.removeRow(i);
+            i -= 1;
+        }
+        connection.toNext();
+        connection.toFirst();
+        setValues();
+        tableModel.addRow(new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state});
+        while(connection.toNext()) {       
+            setValues();
+            tableModel.addRow(new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state});        
+        }
+    }
       
       public void addCustomer(String name, String surname1, String surname2, String phone, String email, String rfc,
                             String street, int number, String suburb, String city, String state) {
         String add = "insert into clientes (nombre, ap_paterno, ap_materno, telefono, email, rfc, calle, numero, colonia, ciudad, estado)"
                    + "values ('"+name+"', '"+surname1+"', '"+surname2+"', '"+phone+"', '"+email+"', '"+rfc+"', '"+street+"', '"+number+"', '"+suburb+"', '"+city+"', '"+state+"');";
         connection.executeUpdate(add);
-         setValues();
-            tableModel.addRow(new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state});
+        setValues();
+        populateTable();
         initValues();
     }
     
@@ -177,16 +194,15 @@ public void initValues() {
         String edit = "update clientes set nombre ='"+name+"', ap_paterno ='"+surname1+"', ap_materno ='"+surname2+"', telefono ='"+phone+"', email ='"+email+"', rfc ='"+rfc+"', calle ='"+street+"', numero ='"+number+"', colonia ='"+suburb+"', ciudad ='"+city+"', estado ='"+state+"'" + "where id_cliente =" +customerID;
         connection.executeUpdate(edit);
         setValues();
-            tableModel.addRow(new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state});
+        populateTable();
         initValues();
     }
     
     public void removeCustomer(int customerID) {
         String remove = "delete from clientes where id_cliente=" +customerID;
         connection.executeUpdate(remove);
-        tableModel.removeRow(-1);
-        
-        
+        setValues();
+        populateTable();
         initValues();
     }
     
@@ -196,15 +212,7 @@ public void initValues() {
         connection.toNext();
     }
     
-    public void populateTable() {
-         Object fields[] = new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state};                       
-        tableModel.addRow(fields);
-        while(connection.toNext()) {       
-            setValues();
-            tableModel.addRow(new Object[]{customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state});
-        }
-    }
-}
+   }
 
 
 

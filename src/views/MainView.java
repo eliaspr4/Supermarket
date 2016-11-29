@@ -32,6 +32,11 @@ public class MainView extends javax.swing.JFrame {
         jmi_proveedores = new javax.swing.JMenuItem();
         jmi_productos = new javax.swing.JMenuItem();
         jmi_salida = new javax.swing.JMenuItem();
+        jm_operaciones = new javax.swing.JMenu();
+        jmi_compras = new javax.swing.JMenuItem();
+        jmi_ventas = new javax.swing.JMenuItem();
+        jm_reportes = new javax.swing.JMenu();
+        jm_info = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -143,6 +148,56 @@ public class MainView extends javax.swing.JFrame {
 
         jmb_menu.add(jm_options);
 
+        jm_operaciones.setBackground(new java.awt.Color(51, 102, 255));
+        jm_operaciones.setBorder(null);
+        jm_operaciones.setForeground(new java.awt.Color(51, 51, 51));
+        jm_operaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Bank Cards_35.png"))); // NOI18N
+        jm_operaciones.setText("Operaciones");
+        jm_operaciones.setBorderPainted(false);
+        jm_operaciones.setContentAreaFilled(false);
+        jm_operaciones.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+
+        jmi_compras.setBackground(new java.awt.Color(255, 255, 255));
+        jmi_compras.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_compras.setForeground(new java.awt.Color(51, 51, 51));
+        jmi_compras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Shopping Cart Loaded-30.png"))); // NOI18N
+        jmi_compras.setText("Compras");
+        jm_operaciones.add(jmi_compras);
+
+        jmi_ventas.setBackground(new java.awt.Color(255, 255, 255));
+        jmi_ventas.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmi_ventas.setForeground(new java.awt.Color(51, 51, 51));
+        jmi_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Banknotes-30.png"))); // NOI18N
+        jmi_ventas.setText("Ventas");
+        jmi_ventas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_ventasActionPerformed(evt);
+            }
+        });
+        jm_operaciones.add(jmi_ventas);
+
+        jmb_menu.add(jm_operaciones);
+
+        jm_reportes.setBackground(new java.awt.Color(51, 102, 255));
+        jm_reportes.setBorder(null);
+        jm_reportes.setForeground(new java.awt.Color(51, 51, 51));
+        jm_reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/report.png"))); // NOI18N
+        jm_reportes.setText("Reportes");
+        jm_reportes.setBorderPainted(false);
+        jm_reportes.setContentAreaFilled(false);
+        jm_reportes.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmb_menu.add(jm_reportes);
+
+        jm_info.setBackground(new java.awt.Color(51, 102, 255));
+        jm_info.setBorder(null);
+        jm_info.setForeground(new java.awt.Color(51, 51, 51));
+        jm_info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Info-40.png"))); // NOI18N
+        jm_info.setText("Acerca de");
+        jm_info.setBorderPainted(false);
+        jm_info.setContentAreaFilled(false);
+        jm_info.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+        jmb_menu.add(jm_info);
+
         setJMenuBar(jmb_menu);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -174,6 +229,10 @@ public class MainView extends javax.swing.JFrame {
     private void jmi_proveedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_proveedoresActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_proveedoresActionPerformed
+
+    private void jmi_ventasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_ventasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_ventasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,13 +274,18 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel;
     public javax.swing.JMenu jm_files;
+    public javax.swing.JMenu jm_info;
+    public javax.swing.JMenu jm_operaciones;
     public javax.swing.JMenu jm_options;
+    public javax.swing.JMenu jm_reportes;
     private javax.swing.JMenuBar jmb_menu;
+    public javax.swing.JMenuItem jmi_compras;
     public javax.swing.JMenuItem jmi_customers;
     public javax.swing.JMenuItem jmi_login;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;
     public javax.swing.JMenuItem jmi_salida;
     public javax.swing.JMenuItem jmi_users;
+    public javax.swing.JMenuItem jmi_ventas;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,5 +1,3 @@
-
-
 package main;
 
 import models.*;
@@ -10,9 +8,7 @@ import javax.swing.JPanel;
 
 public class Main {
 
-
     public static void main(String[] AE) {
-
   
         LoginModel loginModel = new LoginModel();
         LoginView  loginView = new  LoginView();  
@@ -39,13 +35,11 @@ public class Main {
         paneArray[2] = view_proveedores;
         paneArray[3] = view_productos;
         paneArray[4] = view_Usuarios;
-        
-        
+                
         MainModel mainModel = new MainModel();
         MainView mainView = new MainView();
         MainController mainController = new MainController(mainModel, mainView, paneArray);
         
-        LoginController loginController = new LoginController (loginModel, loginView, mainView);
-        
+        LoginController loginController = new LoginController (loginModel, loginView, mainView);       
     } 
 }

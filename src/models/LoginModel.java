@@ -11,8 +11,8 @@ public class LoginModel {
   public  String  name;
   public  String  username;
   public String   password;
-  public String level;
-  public String status;
+  public String   level;
+  public String   status;
   
   
   

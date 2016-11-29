@@ -86,33 +86,37 @@ public class Controller_Productos implements ActionListener {
         showValues();
     }
     
-    public void addProducto() {             
+    public void addProducto() {
+           try {
         String producto = view_productos.jtf_producto.getText();
         String descripcion = view_productos.jtf_descripcion.getText();
-        int precio_venta = Integer.parseInt(view_productos.jtf_precio_venta.getText());
-        int precio_compra = Integer.parseInt(view_productos.jtf_precio_compra.getText());
+        float precio_venta = Float.parseFloat(view_productos.jtf_precio_venta.getText());
+        float precio_compra = Float.parseFloat(view_productos.jtf_precio_compra.getText());
         int existencias = Integer.parseInt(view_productos.jtf_existencias.getText());
-        
-        
-        
         model_productos.addProducto(producto, descripcion, precio_venta, precio_compra, existencias);
         model_productos.setValues();
         showValues();
     }
-    
+           catch(NumberFormatException error) {
+    }
+    }
     public void editProducto() {
+          try {
         int IDproducto = Integer.parseInt(view_productos.jtf_id.getText());
         String producto = view_productos.jtf_producto.getText();
         String descripcion = view_productos.jtf_descripcion.getText();
-        int precio_venta = Integer.parseInt(view_productos.jtf_precio_venta.getText());
-        int precio_compra = Integer.parseInt(view_productos.jtf_precio_compra.getText());
+        float precio_venta = Float.parseFloat(view_productos.jtf_precio_venta.getText());
+        float precio_compra = Float.parseFloat(view_productos.jtf_precio_compra.getText());
         int existencias = Integer.parseInt(view_productos.jtf_existencias.getText());
         
         model_productos.editProducto(IDproducto ,producto, descripcion, precio_venta, precio_compra,existencias);
         model_productos.setValues();
         showValues();
     }
-    
+           catch(NumberFormatException error) {
+                JOptionPane.showMessageDialog(null, "Datos no validos ,Introduzca correctamente todos los campos ", "Error 66" , JOptionPane.ERROR_MESSAGE);
+    }
+    }
     public void removeProducto() {
         int IDproducto = Integer.parseInt(view_productos.jtf_id.getText());
          model_productos.removeProductos(IDproducto);

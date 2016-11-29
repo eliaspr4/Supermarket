@@ -51,13 +51,15 @@ public class LoginController implements ActionListener{
              if(loginModel.level.equals("Usuario frecuente"));{
                 mainView.jm_options.setEnabled(true);
                 mainView.jmi_users.setEnabled(true);
-            }   
+            } 
+             
             }
         }
         else {
             JOptionPane.showMessageDialog(null, "No estás registrado en el sistema. Usuario invalido");
         }
     }
+  
     }
 
     

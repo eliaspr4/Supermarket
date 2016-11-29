@@ -91,7 +91,8 @@ public class ClientesController implements ActionListener {
         showValues();
     }
     
-    public void addCustomer() {             
+    public void addCustomer() {
+        try {
         String name = customersView.jtf_name.getText();
         String surname1 = customersView.jtf_surname1.getText();
         String surname2 = customersView.jtf_surname2.getText();
@@ -106,9 +107,15 @@ public class ClientesController implements ActionListener {
         customersModel.addCustomer(name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state);
         customersModel.setValues();
         showValues();
+        }
+        catch(NumberFormatException error) {
+            
+            
+        }
     }
     
     public void editCustomer() {
+        try {
         int customerID = Integer.parseInt(customersView.jtf_id.getText());
         String name = customersView.jtf_name.getText();
         String surname1 = customersView.jtf_surname1.getText();
@@ -124,6 +131,10 @@ public class ClientesController implements ActionListener {
         customersModel.editCustomer(customerID, name, surname1, surname2, phone, email, rfc, street, number, suburb, city, state);
         customersModel.setValues();
         showValues();
+        }
+        catch(NumberFormatException error) {
+            JOptionPane.showMessageDialog(null, "Datos no validos ,Rellena correctamente todos los campos ", "Error 66" , JOptionPane.ERROR_MESSAGE);
+        }
     }
     
     public void removeCustomer() {

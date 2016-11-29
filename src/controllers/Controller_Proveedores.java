@@ -91,7 +91,8 @@ public class Controller_Proveedores implements ActionListener {
         showValues();
     }
     
-    public void addProveedor() {             
+    public void addProveedor() { 
+        try{
         String nombre = view_proveedores.jtf_nombre.getText();
         String rfc = view_proveedores.jtf_rfc.getText();
         String calle = view_proveedores.jtf_calle.getText();
@@ -107,8 +108,12 @@ public class Controller_Proveedores implements ActionListener {
         model_proveedores.setValues();
         showValues();
     }
+        catch(NumberFormatException error) {
+    }
+    }
     
     public void editProveedor() {
+    try {
         int IDproveedor = Integer.parseInt(view_proveedores.jtf_id.getText());
         String nombre = view_proveedores.jtf_nombre.getText();
         String rfc = view_proveedores.jtf_rfc.getText();
@@ -125,7 +130,10 @@ public class Controller_Proveedores implements ActionListener {
         model_proveedores.setValues();
         showValues();
     }
-    
+    catch(NumberFormatException error) {
+        JOptionPane.showMessageDialog(null, "Datos no validos ,Rellena correctamente todos los campos ", "Error 66" , JOptionPane.ERROR_MESSAGE);
+    }
+    }
     public void removeProveedor() {
         int IDproveedor = Integer.parseInt(view_proveedores.jtf_id.getText());
          model_proveedores.removeProveedor(IDproveedor);

@@ -24,96 +24,6 @@ public class Model_Proveedores {
     
     MyConnection connection = new MyConnection(3306, "localhost", "acme_store", "root", "");
 
-    
-    public void initValues() {
-        String sql = "select * from proveedores";
-        connection.executeQuery(sql);
-        connection.toNext();
-    }
-
-    public void setValues() {
-        IDproveedor = connection.getInteger("id_proveedor");
-        nombre = connection.getString("nombre");
-        rfc = connection.getString("rfc");
-        calle = connection.getString("calle");
-        numero = connection.getInteger("numero");
-        colonia =(connection.getString("colonia"));
-        ciudad = (connection.getString("ciudad"));
-        estado = connection.getString("estado");
-        nombre_contacto = connection.getString("nombre_contacto");
-        telefono = connection.getInteger("telefono");
-        email = connection.getString("email");
-        
-    }
-
-
-    public void moveToFirst() {
-        connection.toFirst();
-        setValues();
-    }
-    
-    public void moveToPrevious() {
-        connection.toPrevious();
-        setValues();
-    }
-    
-    public void moveToNext() {
-        connection.toNext();
-        setValues();
-    }
-    
-     public void moveToLast() {
-        connection.toLast();
-        setValues();
-    }
-    
-      public void addProveedor(String nombre, String rfc, String calle, int numero, String colonia, String ciudad,
-                            String estado, String nombre_contacto, int telefono, String email) {
-        String add = "insert into proveedores (nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email)"
-                   + "values ('"+nombre+"', '"+rfc+"', '"+calle+"', '"+numero+"', '"+colonia+"', '"+ciudad+"', '"+estado+"', '"+nombre_contacto+"', '"+telefono+"', '"+email+"');";
-        connection.executeUpdate(add); 
-        
-         setValues();
-              tableModel.addRow(new Object[]{IDproveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto,telefono, email });
-      
-        initValues();
-    }
-    
-    public void editProveedor(int IDproveedor, String nombre, String rfc, String calle, int numero, String colonia,
-                             String ciudad, String estado, String nombre_contacto, int telefono, String email) {
-        String edit = "update proveedores set nombre ='"+nombre+"', rfc ='"+rfc+"', calle ='"+calle+"', numero ='"+numero+"', colonia ='"+colonia+"', ciudad ='"+ciudad+"', estado ='"+estado+"', nombre_contacto ='"+nombre_contacto+"', telefono ='"+telefono+"', email ='"+email+"'" + "where id_proveedor =" +IDproveedor;
-        connection.executeUpdate(edit);
-         setValues();
-              tableModel.addRow(new Object[]{IDproveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto,telefono, email });
-      
-        initValues();
-    }
-    
-    public void removeProveedor(int IDproveedor) {
-        String remove = "delete from proveedores where id_proveedor=" +IDproveedor;
-        connection.executeUpdate(remove);
-         
-        initValues();
-    }
-    
-    public void findCustomer(String nombre) {
-        String find = "select * from proveedores where nombre like "+nombre+"%;";
-        connection.executeQuery(find);
-        connection.toNext();
-    }
-    
-    public void populateTable() {
-        Object fields[] = new Object[]{IDproveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto,telefono, email};
-        while(connection.toNext()) {            
-            setValues();
-              tableModel.addRow(new Object[]{IDproveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto,telefono, email });
-      
-        }
-    }
-
-    /**
-     * @return the IDproveedor
-     */
     public int getIDproveedor() {
         return IDproveedor;
     }
@@ -264,7 +174,104 @@ public class Model_Proveedores {
     public void setEmail(String email) {
         this.email = email;
     }
-}
+
+
+    public void initValues() {
+        String sql = "select * from proveedores";
+        connection.executeQuery(sql);
+        connection.toNext();
+    }
+
+    public void setValues() {
+        IDproveedor = connection.getInteger("id_proveedor");
+        nombre = connection.getString("nombre");
+        rfc = connection.getString("rfc");
+        calle = connection.getString("calle");
+        numero = connection.getInteger("numero");
+        colonia =(connection.getString("colonia"));
+        ciudad = (connection.getString("ciudad"));
+        estado = connection.getString("estado");
+        nombre_contacto = connection.getString("nombre_contacto");
+        telefono = connection.getInteger("telefono");
+        email = connection.getString("email");
+        
+    }
+
+
+    public void moveToFirst() {
+        connection.toFirst();
+        setValues();
+    }
+    
+    public void moveToPrevious() {
+        connection.toPrevious();
+        setValues();
+    }
+    
+    public void moveToNext() {
+        connection.toNext();
+        setValues();
+    }
+    
+     public void moveToLast() {
+        connection.toLast();
+        setValues();
+    }
+      public void populateTable() {
+          String table = "select * from proveedores";
+          connection.executeQuery(table);
+        connection.toNext();
+        for(int i = 0; i < tableModel.getRowCount(); i++) {
+            tableModel.removeRow(i);
+            i -= 1;
+        }
+        connection.toNext();
+        connection.toFirst();
+        setValues();
+        tableModel.addRow(new Object[]{IDproveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto,telefono, email });
+        while(connection.toNext()) { 
+         setValues();
+       tableModel.addRow( new Object[]{IDproveedor, nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto,telefono, email});  
+        }
+      }
+    
+      public void addProveedor(String nombre, String rfc, String calle, int numero, String colonia, String ciudad,
+                            String estado, String nombre_contacto, int telefono, String email) {
+        String add = "insert into proveedores (nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email)"
+                   + "values ('"+nombre+"', '"+rfc+"', '"+calle+"', '"+numero+"', '"+colonia+"', '"+ciudad+"', '"+estado+"', '"+nombre_contacto+"', '"+telefono+"', '"+email+"');";
+        connection.executeUpdate(add); 
+         setValues();
+         populateTable();     
+         initValues();
+    }
+    
+    public void editProveedor(int IDproveedor, String nombre, String rfc, String calle, int numero, String colonia,
+                             String ciudad, String estado, String nombre_contacto, int telefono, String email) {
+        String edit = "update proveedores set nombre ='"+nombre+"', rfc ='"+rfc+"', calle ='"+calle+"', numero ='"+numero+"', colonia ='"+colonia+"', ciudad ='"+ciudad+"', estado ='"+estado+"', nombre_contacto ='"+nombre_contacto+"', telefono ='"+telefono+"', email ='"+email+"'" + "where id_proveedor =" +IDproveedor;
+        connection.executeUpdate(edit);
+         setValues();
+         populateTable();
+         initValues();
+    }
+    
+    public void removeProveedor(int IDproveedor) {
+        String remove = "delete from proveedores where id_proveedor=" +IDproveedor;
+        connection.executeUpdate(remove);
+        setValues();
+        populateTable();
+        initValues();
+    }
+    
+    public void findCustomer(String nombre) {
+        String find = "select * from proveedores where nombre like "+nombre+"%;";
+        connection.executeQuery(find);
+        connection.toNext();
+    }
+    
+   
+    }
+
+  
 
 
 

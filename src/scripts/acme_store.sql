@@ -99,7 +99,7 @@ values('Mayra', 'Vargas', 'Cruz', '7759571638', 'cuau5@hotmail.com', '2394574103
 insert into clientes(nombre, ap_paterno, ap_materno, telefono, email, rfc, calle, numero, colonia, ciudad, estado)
 values('Elias', 'Pujol', 'Rodriguez', '7751545506', 'eliaspr1@hotmail.com', '239444104', 'Independencia', '414', 'Morena', 'Tulancingo', 'Hidalgo');
 insert into clientes(nombre, ap_paterno, ap_materno, telefono, email, rfc, calle, numero, colonia, ciudad, estado)
-values('Senyat', 'Olvera', 'Calderons', '7753035417', 'senyat69@hotmail.com', '2394574105', 'Reforma', '624', 'Juarez', 'Pachuca', 'Hidalgo');
+values('Senyat', 'Olvera', 'Calderon', '7753035417', 'senyat69@hotmail.com', '2394574105', 'Reforma', '624', 'Juarez', 'Pachuca', 'Hidalgo');
 
 insert into proveedores(nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email)
 values('Luis Ángel', '10893787', 'Alamos', '320', 'Colobires', 'Pachuca', 'Hidalgo', 'wicho', '157900334', 'wicho69_es@live.com');
@@ -119,6 +119,8 @@ insert into login (nombre, usuario, contrasena, nivel, estado)
 values ('Calamardo', 'spongebob', 'sammy', 'Admin', 'Activo');
 insert into login (nombre, usuario, contrasena, nivel, estado)
 values ('Yadira', 'yadiragolosa69', 'weed', 'Usuario Frecuente', 'Activo');
+insert into login (nombre, usuario, contrasena, nivel, estado)
+values ('Elías', 'eliaselfeo', '1234', 'Usuario', 'Inactivo');
 
 insert into usuarios (nombre, usuario, contrasena, nivel, estado)
 values ('Calamardo', 'spongebob', 'sammy', 'Admin', 'Activo');
