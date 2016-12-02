@@ -1,7 +1,7 @@
 
 package models;
 
-import java.sql.ResultSet;
+
 import epr.MyConnection;
 import javax.swing.table.DefaultTableModel;
 public class UsuariosModel {
@@ -66,8 +66,9 @@ public void initValues() {
 
 
 public void setValues() {
-        
+        name = connection.getString("nombre");
         username = connection.getString("usuario");
+        password = connection.getString("contrasena");
         level = connection.getString("nivel");
         status = connection.getString("estado");
         
@@ -94,38 +95,49 @@ public void moveToFirst() {
         setValues();
     }
 
-  public void addUser(String username, String level,String status){
-       String add = "insert into usuarios (usuario,nivel,estado)" + "values('"+username+"', '"+level+"', '"+status+"', );";
+  public void addUser(String name, String username, String password, String level, String status) {
+        String add = "insert into usuarios (nombre, usuario, contrasena, nivel, estado)"
+                   + "values ('"+name+"', '"+username+"', '"+password+"', '"+level+"', '"+status+"');";
        connection.executeUpdate(add);
-         setValues();
-         tableModel.addRow(new Object[]{ username, level,status});
          initValues();
+         populateTable();
   }
   
-  public void editUser(String username, String level,String status){
-       String add = "insert into usuarios (usuario,nivel,estado)" + "values('"+username+"', '"+level+"', '"+status+"', );";
-       connection.executeUpdate(add);
-         setValues();
-         tableModel.addRow(new Object[]{ username, level,status});
-         initValues();
+  public void editUser(String name, String username, String password, String level, String status) {
+        String edit = "update usuarios set nombre ='"+name+"', usuario ='"+username+"', contrasena ='"+password+"', nivel ='"+level+"', estado ='"+status+"'" + "where nombre =" +name;
+                   
+       connection.executeUpdate(edit);
+          initValues();
+        populateTable();
+   }
   
-}
-  
-   public void findUser(String username) {
-        String find = "select * from usuarios where usuario like "+username+"%;";
+   public boolean findUser(String username) {
+           boolean isFound = false;
+        String find = "select * from usuarios where nombre = '"+name+"';";
         connection.executeQuery(find);
         connection.toNext();
+        if(name.equals(connection.getString("usuario"))) {
+            isFound = true;
+        }
+        return isFound;
     }
+    
 
-public void UsersTable() {
-         Object fields[] = new Object[]{username,level,status};                       
+public void populateTable() {
+        for(int i = 0; i < tableModel.getRowCount(); i++) {
+            tableModel.removeRow(i);
+            i -= 1;
+        }
+        Object fields[] = new Object[]{"spongebob", "Admin", "Activo"};
         tableModel.addRow(fields);
-        while(connection.toNext()) {       
+        while(connection.toNext()) {
             setValues();
-            tableModel.addRow(new Object[]{username,level,status});
+            tableModel.addRow(new Object []{username, level, status});           
         }
     }
+        }
+    
 
-}
+
 
 

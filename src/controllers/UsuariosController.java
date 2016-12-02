@@ -50,7 +50,6 @@ public class UsuariosController implements ActionListener{
     }
 
     private void initView() {
-        view_Usuarios.setVisible(true);
         usuariosModel.initValues();
         usuariosModel.setValues();
     }
@@ -90,7 +89,7 @@ public class UsuariosController implements ActionListener{
     String password = view_Usuarios.jpf_contraseña.getText();
     String level = view_Usuarios.jtf_nivel.getText();
     String status = view_Usuarios.jtf_status.getText();
-    usuariosModel.addUser(username, level, status);
+    usuariosModel.addUser(name,username,password, level, status);
     usuariosModel.setValues();
     showValues();
     }
@@ -101,7 +100,7 @@ public class UsuariosController implements ActionListener{
     String password = view_Usuarios.jpf_contraseña.getText();
     String level = view_Usuarios.jtf_nivel.getText();
     String status = view_Usuarios.jtf_status.getText();
-    usuariosModel.editUser(username, level, status);
+    usuariosModel.editUser(name,username,password, level, status);
     usuariosModel.setValues();
     showValues(); 
     }
@@ -116,7 +115,7 @@ public class UsuariosController implements ActionListener{
 
     private void showRecords() {
         view_Usuarios.jt_usuarios.setModel(usuariosModel.tableModel);
-        usuariosModel.UsersTable();
+        usuariosModel.populateTable();
     }
 
    

@@ -181,7 +181,7 @@ public class MainView extends javax.swing.JFrame {
         jm_reportes.setBackground(new java.awt.Color(51, 102, 255));
         jm_reportes.setBorder(null);
         jm_reportes.setForeground(new java.awt.Color(51, 51, 51));
-        jm_reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/report.png"))); // NOI18N
+        jm_reportes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/documents_32.png"))); // NOI18N
         jm_reportes.setText("Reportes");
         jm_reportes.setBorderPainted(false);
         jm_reportes.setContentAreaFilled(false);
