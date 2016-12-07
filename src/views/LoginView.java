@@ -33,52 +33,52 @@ public class LoginView extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jtf_usuario = new javax.swing.JTextField();
         jpf_contraseña = new javax.swing.JPasswordField();
-        jLabel6 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         jLabel4.setText("jLabel4");
 
-        setBackground(new java.awt.Color(0, 0, 0));
+        setBackground(new java.awt.Color(0, 153, 255));
         setFont(new java.awt.Font("Tekton Pro", 0, 12)); // NOI18N
+        setMaximumSize(new java.awt.Dimension(1141, 480));
         setLayout(null);
 
-        jbtn_login.setBackground(new java.awt.Color(102, 0, 102));
-        jbtn_login.setFont(new java.awt.Font("Microsoft Sans Serif", 1, 14)); // NOI18N
+        jbtn_login.setBackground(new java.awt.Color(153, 153, 153));
+        jbtn_login.setFont(new java.awt.Font("Tw Cen MT", 1, 18)); // NOI18N
         jbtn_login.setForeground(new java.awt.Color(255, 255, 255));
-        jbtn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Login Rounded Down-48.png"))); // NOI18N
+        jbtn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Enter Key-48.png"))); // NOI18N
         jbtn_login.setText("Ingresar");
         jbtn_login.setAutoscrolls(true);
         jbtn_login.setBorder(null);
-        jbtn_login.setBorderPainted(false);
         jbtn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jbtn_loginActionPerformed(evt);
             }
         });
         add(jbtn_login);
-        jbtn_login.setBounds(70, 380, 280, 48);
+        jbtn_login.setBounds(190, 420, 460, 48);
 
         jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/user.png"))); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Contacts Filled-40.png"))); // NOI18N
         jLabel2.setText("Nombre de usuario");
         add(jLabel2);
-        jLabel2.setBounds(20, 220, 160, 60);
+        jLabel2.setBounds(190, 170, 180, 60);
 
         jLabel3.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Forgot Password-48.png"))); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Lock-40.png"))); // NOI18N
         jLabel3.setText("Contraseña");
         add(jLabel3);
-        jLabel3.setBounds(10, 290, 170, 40);
+        jLabel3.setBounds(190, 250, 170, 40);
 
         jtf_usuario.setBackground(new java.awt.Color(255, 255, 255));
         jtf_usuario.setForeground(new java.awt.Color(0, 0, 0));
         jtf_usuario.setBorder(null);
         add(jtf_usuario);
-        jtf_usuario.setBounds(180, 240, 220, 30);
+        jtf_usuario.setBounds(380, 190, 260, 30);
 
         jpf_contraseña.setBackground(new java.awt.Color(255, 255, 255));
         jpf_contraseña.setForeground(new java.awt.Color(0, 0, 0));
@@ -89,17 +89,17 @@ public class LoginView extends javax.swing.JPanel {
             }
         });
         add(jpf_contraseña);
-        jpf_contraseña.setBounds(180, 290, 220, 30);
+        jpf_contraseña.setBounds(380, 260, 260, 30);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/a08ee8eb3108d8c6ae69437113b22447.jpg"))); // NOI18N
-        add(jLabel6);
-        jLabel6.setBounds(0, 200, 420, 310);
+        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Login_Basic_Flat.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        jLabel1.setPreferredSize(new java.awt.Dimension(503, 503));
-        add(jLabel1);
-        jLabel1.setBounds(0, 0, 420, 200);
+        jLabel1.setFont(new java.awt.Font("Trebuchet MS", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Iniciar sesión");
+        jPanel1.add(jLabel1);
+
+        add(jPanel1);
+        jPanel1.setBounds(0, 0, 940, 80);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtn_loginActionPerformed
@@ -116,7 +116,7 @@ public class LoginView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     public javax.swing.JButton jbtn_login;
     public javax.swing.JPasswordField jpf_contraseña;
     public javax.swing.JTextField jtf_usuario;

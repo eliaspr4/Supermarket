@@ -15,7 +15,7 @@ public class Model_Proveedores {
     private String ciudad;
     private String estado;
     private String nombre_contacto;    
-    private int telefono;
+    private String telefono;
     private String email;
     
     
@@ -150,14 +150,14 @@ public class Model_Proveedores {
     /**
      * @return the telefono
      */
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
     /**
      * @param telefono the telefono to set
      */
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 
@@ -192,7 +192,7 @@ public class Model_Proveedores {
         ciudad = (connection.getString("ciudad"));
         estado = connection.getString("estado");
         nombre_contacto = connection.getString("nombre_contacto");
-        telefono = connection.getInteger("telefono");
+        telefono = connection.getString("telefono");
         email = connection.getString("email");
         
     }
@@ -236,7 +236,7 @@ public class Model_Proveedores {
       }
     
       public void addProveedor(String nombre, String rfc, String calle, int numero, String colonia, String ciudad,
-                            String estado, String nombre_contacto, int telefono, String email) {
+                            String estado, String nombre_contacto, String telefono, String email) {
         String add = "insert into proveedores (nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email)"
                    + "values ('"+nombre+"', '"+rfc+"', '"+calle+"', '"+numero+"', '"+colonia+"', '"+ciudad+"', '"+estado+"', '"+nombre_contacto+"', '"+telefono+"', '"+email+"');";
         connection.executeUpdate(add); 
@@ -246,7 +246,7 @@ public class Model_Proveedores {
     }
     
     public void editProveedor(int IDproveedor, String nombre, String rfc, String calle, int numero, String colonia,
-                             String ciudad, String estado, String nombre_contacto, int telefono, String email) {
+                             String ciudad, String estado, String nombre_contacto, String telefono, String email) {
         String edit = "update proveedores set nombre ='"+nombre+"', rfc ='"+rfc+"', calle ='"+calle+"', numero ='"+numero+"', colonia ='"+colonia+"', ciudad ='"+ciudad+"', estado ='"+estado+"', nombre_contacto ='"+nombre_contacto+"', telefono ='"+telefono+"', email ='"+email+"'" + "where id_proveedor =" +IDproveedor;
         connection.executeUpdate(edit);
          setValues();

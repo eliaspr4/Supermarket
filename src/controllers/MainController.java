@@ -28,9 +28,15 @@ public class MainController implements ActionListener {
         this.mainView.jmi_login.addActionListener(this);
         this.mainView.jmi_customers.addActionListener(this);
         this.mainView.jmi_salida.addActionListener(this);
+        
         this.mainView.jmi_proveedores.addActionListener(this);
         this.mainView.jmi_productos.addActionListener(this);
         this.mainView.jmi_users.addActionListener(this);
+        
+        this.mainView.jmi_compras.addActionListener(this);
+        this.mainView.jmi_ventas.addActionListener(this);
+        this.mainView.jmi_info.addActionListener(this);
+        
         
         initView();
         
@@ -40,16 +46,26 @@ public class MainController implements ActionListener {
     public void actionPerformed(ActionEvent x) {
         if(x.getSource() == mainView.jmi_login)
             loginPanel();
-        else if(x.getSource() == mainView.jmi_customers)
-            customersPane();
+        else if(x.getSource()==mainView.jmi_users)
+            usersPane();
          else if(x.getSource() == mainView.jmi_salida)
             close();
+         
+        else if(x.getSource() == mainView.jmi_customers)
+            customersPane();
+        
         else if(x.getSource()== mainView.jmi_proveedores)
              proveedoresPane();
         else if(x.getSource()== mainView.jmi_productos)
              productosPane();
-        else if(x.getSource()==mainView.jmi_users)
-            usersPane();
+        
+        
+        else if(x.getSource()== mainView.jmi_compras)
+             comprasPane();
+        else if(x.getSource()==mainView.jmi_ventas)
+            ventasPane();
+        else if(x.getSource()==mainView.jmi_info)
+            infoPane();
     }
     
     public void initView() {
@@ -59,6 +75,16 @@ public class MainController implements ActionListener {
         
         mainView.jm_options.setEnabled(false);
         mainView.jmi_users.setEnabled(false);
+             
+        mainView.jmi_customers.setEnabled(false);
+        mainView.jmi_proveedores.setEnabled(false);
+        mainView.jmi_productos.setEnabled(false);
+        
+        mainView.jm_operaciones.setEnabled(false);       
+        mainView.jmi_ventas.setEnabled(false);
+        mainView.jmi_compras.setEnabled(false);
+       
+        
     }
     
     public void loginPanel() {
@@ -88,12 +114,32 @@ public class MainController implements ActionListener {
         mainView.revalidate();
         mainView.repaint();
     }
+     private void comprasPane() {
+          mainView.setContentPane(paneArray[5]);
+          mainView.revalidate();
+          mainView.repaint();
+    }
+
+    private void ventasPane() {
+         mainView.setContentPane(paneArray[6]);
+         mainView.revalidate();
+         mainView.repaint();
+    }
+
+     private void infoPane() {
+         mainView.setContentPane(paneArray[7]);
+         mainView.revalidate();
+         mainView.repaint();
+    }
 public void close() {
         int confirm = JOptionPane.showConfirmDialog(null, "¿Desea cerrar sesión?", "Aviso", JOptionPane.YES_NO_OPTION);
         if(confirm == JOptionPane.YES_OPTION)
             System.exit(0);
     }
 
+  
+
+  
     
 
 

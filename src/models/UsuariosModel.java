@@ -4,6 +4,7 @@ package models;
 
 import epr.MyConnection;
 import javax.swing.table.DefaultTableModel;
+
 public class UsuariosModel {
   
   public  String  name;
@@ -105,13 +106,12 @@ public void moveToFirst() {
   
   public void editUser(String name, String username, String password, String level, String status) {
         String edit = "update usuarios set nombre ='"+name+"', usuario ='"+username+"', contrasena ='"+password+"', nivel ='"+level+"', estado ='"+status+"'" + "where nombre =" +name;
-                   
-       connection.executeUpdate(edit);
+                    connection.executeUpdate(edit);
           initValues();
         populateTable();
    }
   
-   public boolean findUser(String username) {
+   public boolean findUser(String name) {
            boolean isFound = false;
         String find = "select * from usuarios where nombre = '"+name+"';";
         connection.executeQuery(find);
@@ -124,18 +124,25 @@ public void moveToFirst() {
     
 
 public void populateTable() {
+        initValues();
         for(int i = 0; i < tableModel.getRowCount(); i++) {
             tableModel.removeRow(i);
             i -= 1;
         }
-        Object fields[] = new Object[]{"spongebob", "Admin", "Activo"};
-        tableModel.addRow(fields);
+        connection.toNext();
+        connection.toFirst();
+        setValues();
+        tableModel.addRow(new Object []{username, level, status});
         while(connection.toNext()) {
             setValues();
             tableModel.addRow(new Object []{username, level, status});           
         }
     }
+
+
         }
+
+
     
 
 

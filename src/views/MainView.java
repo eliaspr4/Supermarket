@@ -37,6 +37,7 @@ public class MainView extends javax.swing.JFrame {
         jmi_ventas = new javax.swing.JMenuItem();
         jm_reportes = new javax.swing.JMenu();
         jm_info = new javax.swing.JMenu();
+        jmi_info = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -54,7 +55,7 @@ public class MainView extends javax.swing.JFrame {
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelLayout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 6, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanelLayout.setVerticalGroup(
             jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -65,7 +66,7 @@ public class MainView extends javax.swing.JFrame {
         jmb_menu.setBorder(null);
         jmb_menu.setPreferredSize(new java.awt.Dimension(202, 45));
 
-        jm_files.setBackground(new java.awt.Color(0, 102, 255));
+        jm_files.setBackground(new java.awt.Color(51, 102, 255));
         jm_files.setForeground(new java.awt.Color(51, 51, 51));
         jm_files.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/home_32.png"))); // NOI18N
         jm_files.setText("Inicio");
@@ -93,7 +94,7 @@ public class MainView extends javax.swing.JFrame {
 
         jmb_menu.add(jm_files);
 
-        jm_options.setBackground(new java.awt.Color(0, 102, 255));
+        jm_options.setBackground(new java.awt.Color(51, 102, 255));
         jm_options.setBorder(null);
         jm_options.setForeground(new java.awt.Color(51, 51, 51));
         jm_options.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/catalog.png"))); // NOI18N
@@ -151,7 +152,7 @@ public class MainView extends javax.swing.JFrame {
         jm_operaciones.setBackground(new java.awt.Color(51, 102, 255));
         jm_operaciones.setBorder(null);
         jm_operaciones.setForeground(new java.awt.Color(51, 51, 51));
-        jm_operaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Bank Cards_35.png"))); // NOI18N
+        jm_operaciones.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/empty_shopping_cart_32 (1).png"))); // NOI18N
         jm_operaciones.setText("Operaciones");
         jm_operaciones.setBorderPainted(false);
         jm_operaciones.setContentAreaFilled(false);
@@ -160,15 +161,20 @@ public class MainView extends javax.swing.JFrame {
         jmi_compras.setBackground(new java.awt.Color(255, 255, 255));
         jmi_compras.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_compras.setForeground(new java.awt.Color(51, 51, 51));
-        jmi_compras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Shopping Cart Loaded-30.png"))); // NOI18N
-        jmi_compras.setText("Compras");
+        jmi_compras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/empty_shopping_cart_32.png"))); // NOI18N
+        jmi_compras.setText("Ventas");
+        jmi_compras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmi_comprasActionPerformed(evt);
+            }
+        });
         jm_operaciones.add(jmi_compras);
 
         jmi_ventas.setBackground(new java.awt.Color(255, 255, 255));
         jmi_ventas.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
         jmi_ventas.setForeground(new java.awt.Color(51, 51, 51));
         jmi_ventas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Banknotes-30.png"))); // NOI18N
-        jmi_ventas.setText("Ventas");
+        jmi_ventas.setText("Compras");
         jmi_ventas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jmi_ventasActionPerformed(evt);
@@ -196,6 +202,14 @@ public class MainView extends javax.swing.JFrame {
         jm_info.setBorderPainted(false);
         jm_info.setContentAreaFilled(false);
         jm_info.setFont(new java.awt.Font("Trebuchet MS", 0, 14)); // NOI18N
+
+        jmi_info.setBackground(new java.awt.Color(255, 255, 255));
+        jmi_info.setFont(new java.awt.Font("Trebuchet MS", 0, 12)); // NOI18N
+        jmi_info.setForeground(new java.awt.Color(0, 0, 0));
+        jmi_info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/Paste-40.png"))); // NOI18N
+        jmi_info.setText("Información ");
+        jm_info.add(jmi_info);
+
         jmb_menu.add(jm_info);
 
         setJMenuBar(jmb_menu);
@@ -233,6 +247,10 @@ public class MainView extends javax.swing.JFrame {
     private void jmi_ventasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_ventasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jmi_ventasActionPerformed
+
+    private void jmi_comprasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmi_comprasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jmi_comprasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -281,6 +299,7 @@ public class MainView extends javax.swing.JFrame {
     private javax.swing.JMenuBar jmb_menu;
     public javax.swing.JMenuItem jmi_compras;
     public javax.swing.JMenuItem jmi_customers;
+    public javax.swing.JMenuItem jmi_info;
     public javax.swing.JMenuItem jmi_login;
     public javax.swing.JMenuItem jmi_productos;
     public javax.swing.JMenuItem jmi_proveedores;

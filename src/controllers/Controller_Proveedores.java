@@ -101,7 +101,7 @@ public class Controller_Proveedores implements ActionListener {
         String ciudad = view_proveedores.jtf_rfc.getText();
         String estado = view_proveedores.jtf_estado.getText();
         String nombre_contacto = view_proveedores.jtf_nombre_contacto.getText();
-        int telefono = Integer.parseInt(view_proveedores.jtf_telefono.getText());
+        String telefono = view_proveedores.jtf_telefono.getText();
         String email = view_proveedores.jtf_email.getText();
         
         model_proveedores.addProveedor(nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email);
@@ -123,7 +123,7 @@ public class Controller_Proveedores implements ActionListener {
         String ciudad = view_proveedores.jtf_rfc.getText();
         String estado = view_proveedores.jtf_estado.getText();
         String nombre_contacto = view_proveedores.jtf_nombre_contacto.getText();
-        int telefono = Integer.parseInt(view_proveedores.jtf_telefono.getText());
+        String telefono = view_proveedores.jtf_telefono.getText();
         String email = view_proveedores.jtf_email.getText();
         
         model_proveedores.editProveedor(IDproveedor ,nombre, rfc, calle, numero, colonia, ciudad, estado, nombre_contacto, telefono, email);

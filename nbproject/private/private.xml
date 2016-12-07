@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/controllers/ComprasController.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>151</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Elias%20Pujol%20R/Documents/NetBeansProjects/CesarTestLibrary/Shop/New%20Supermarket/Supermarket/src/models/Model_Productos.java</file>
             <file>file:/C:/Users/Elias%20Pujol%20R/Documents/NetBeansProjects/CesarTestLibrary/Shop/New%20Supermarket/Supermarket/src/scripts/acme_store.sql</file>
-            <file>file:/C:/Users/Elias%20Pujol%20R/Documents/NetBeansProjects/CesarTestLibrary/Shop/New%20Supermarket/Supermarket/src/views/ReportesView.java</file>
+            <file>file:/C:/Users/Elias%20Pujol%20R/Documents/NetBeansProjects/CesarTestLibrary/Shop/New%20Supermarket/Supermarket/src/controllers/Controller_Productos.java</file>
         </group>
     </open-files>
 </project-private>

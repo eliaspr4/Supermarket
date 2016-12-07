@@ -202,7 +202,7 @@ public class CustomersView extends javax.swing.JPanel {
         jbtn_edit.setBorderPainted(false);
 
         jbtn_remove.setBackground(new java.awt.Color(51, 204, 255));
-        jbtn_remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/remove_user.png"))); // NOI18N
+        jbtn_remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/delete_user.png"))); // NOI18N
         jbtn_remove.setBorder(null);
         jbtn_remove.setBorderPainted(false);
 

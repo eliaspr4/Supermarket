@@ -7,48 +7,30 @@ import java.util.Date;
 
 public class VentasModel {
     
-     int ID_Cliente;
-    String Nombre;
-    int ID_Producto;
-    String Producto;
-    float Precio_venta;
-    int Cantidad;
-    float Total;
-    float Subtotal;
-    String fecha;
+    public int ID_Venta;
+    public String Producto;
+    public int Cantidad;
+    public float Precio_venta;
+    public float Total_Producto;
     
+   
+    
+    public String Nombre_Cliente;
+    public String fecha;
+    public float Total_Venta;
     public Date dia = new Date();
     
-    public DefaultTableModel tableModel = new DefaultTableModel( new String []{"ID Producto","Producto","Precio venta","Cantidad","Subtotal"}, 0);
-   
+     public DefaultTableModel detalleVentas = new DefaultTableModel( new String []{"ID Producto","Producto","Precio venta","Cantidad","Subtotal"}, 0);
+    public DefaultTableModel ventas = new DefaultTableModel(new String []{"Nombre", "Fecha", "Total"}, 0);
     
     MyConnection connection = new MyConnection(3306, "localhost", "acme_store", "root", "");
 
-  
-
-    
-   public int getID_Cliente() {
-        return ID_Cliente;
+    public int getID_Venta() {
+        return ID_Venta;
     }
 
-    public void setID_Cliente(int ID_Cliente) {
-        this.ID_Cliente = ID_Cliente;
-    }
-
-    public String getNombre() {
-        return Nombre;
-    }
-
-    public void setNombre(String Nombre) {
-        this.Nombre = Nombre;
-    }
-
-    public int getID_Producto() {
-        return ID_Producto;
-    }
-
-    public void setID_Producto(int ID_Producto) {
-        this.ID_Producto = ID_Producto;
+    public void setID_Venta(int ID_Venta) {
+        this.ID_Venta = ID_Venta;
     }
 
     public String getProducto() {
@@ -59,14 +41,6 @@ public class VentasModel {
         this.Producto = Producto;
     }
 
-    public float getPrecio_venta() {
-        return Precio_venta;
-    }
-
-    public void setPrecio_venta(float Precio_venta) {
-        this.Precio_venta = Precio_venta;
-    }
-
     public int getCantidad() {
         return Cantidad;
     }
@@ -75,49 +49,81 @@ public class VentasModel {
         this.Cantidad = Cantidad;
     }
 
-    public float getTotal() {
-        return Total;
+    public float getPrecio_venta() {
+        return Precio_venta;
     }
 
-    public void setTotal(float Total) {
-        this.Total = Total;
+    public void setPrecio_venta(float Precio_venta) {
+        this.Precio_venta = Precio_venta;
     }
 
-    public float getSubtotal() {
-        return Subtotal;
+    public float getTotal_Producto() {
+        return Total_Producto;
     }
 
-    public void setSubtotal(float Subtotal) {
-        this.Subtotal = Subtotal;
+    public void setTotal_Producto(float Total_Producto) {
+        this.Total_Producto = Total_Producto;
     }
-   
-     public void initValues() {
-        String sql = "select * from ventas";
+
+    public String getNombre_Cliente() {
+        return Nombre_Cliente;
+    }
+
+    public void setNombre_Cliente(String Nombre_Cliente) {
+        this.Nombre_Cliente = Nombre_Cliente;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public float getTotal_Venta() {
+        return Total_Venta;
+    }
+
+    public void setTotal_Venta(float Total_Venta) {
+        this.Total_Venta = Total_Venta;
+    }
+
+    public void initValues() {
+        String sql = "select * from detalleVentas";
         connection.executeQuery(sql);
         connection.toNext();
     }
      
      public void setValues(){
          
-         ID_Cliente = connection.getInteger("id_cliente");
-         Nombre = connection.getString("nombre");
-         ID_Producto = connection.getInteger("id_producto");
+         ID_Venta = connection.getInteger("id_venta");
          Producto = connection.getString("producto");
-         Precio_venta = connection.getFloat("precio_venta");
          Cantidad = connection.getInteger("cantidad");
-         Subtotal = connection.getFloat("subtotal");
-         Total = connection.getInteger("total");
+         Precio_venta = connection.getFloat("precio_venta");
+         Total_Producto = connection.getFloat("total_producto");
      }
      
-     public boolean buscarCliente(int ID_Producto){
+      public void initSale() {
+        String sql = "select * from ventas";
+        connection.executeQuery(sql);
+        connection.toNext();
+    }
+    
+    public void setSale() {
+        Nombre_Cliente = connection.getString("nombre");
+        fecha = connection.getString("fecha");
+        Total_Venta = connection.getFloat("total_venta");
+    }
+    
+     public boolean buscarCliente(int ID_Cliente){
          boolean isFound = false;
-        String find = "select * from productos where id_producto = '"+ID_Producto+"';";
+        String find = "select * from clientes where id_cliente = '"+ID_Cliente+"';";
         connection.executeQuery(find);
         connection.toNext();
-        if(ID_Producto == connection.getInteger("id_producto")) {
+        if(ID_Cliente == connection.getInteger("id_cliente")) {
             isFound = true;
-            Producto = connection.getString("producto");
-            Precio_venta = connection.getFloat("precio_venta");
+         Nombre_Cliente = connection.getString("nombre");
         }
         return isFound;
     }
@@ -136,16 +142,38 @@ public class VentasModel {
     }
      
       
-    public void agregarProducto(int ID_Cliente,String Nombre,int ID_Producto,String Producto,float Precio_Venta,int Cantidad,float Subtotal,float Total ){
-        String add = "insert into ventas (id_cliente, nombre, id_producto, producto, precio_venta, cantidad, iva, subtotal, total)"
-        + "values ('"+ID_Cliente+"', '"+Nombre+"', '"+ID_Producto+"', '"+Producto+"', '"+Precio_Venta+"', '"+Cantidad+"', '"+Subtotal+"', '"+Total+"');";
-    connection.executeUpdate(add);
+    public void agregarProducto (String Producto, int Cantidad, float Precio_Venta) {
         initValues();
-         tableModel.addRow(new Object[]{ID_Producto, Producto, Precio_Venta,Cantidad, Subtotal});
-         fecha = String.format("%s %tB %<te, %<tY", dia);
+        ID_Venta = connection.getInteger("id_venta");
+        connection.toLast();
+        ID_Venta = 7;
+        Total_Producto = Cantidad * Precio_Venta;
+        String add = "insert into detalleVentas(id_venta, producto, cantidad, precio_venta, total_producto)"
+                   + "values ('"+ID_Venta+"', '"+Producto+"', '"+Cantidad+"', '"+Precio_Venta+"', '"+Total_Producto+"');";
+        connection.executeUpdate(add);
+        initValues();
+        detalleVentas.addRow(new Object [] {ID_Venta, Producto, Cantidad, Precio_Venta, Total_Producto});
     }
+    
+public void agregarCompra(String Nombre_Cliente, float Total_Venta) { 
+        fecha = dia.toString();
+        String add = "insert into ventas(nombre, fecha, total_venta)" + "values ('"+Nombre_Cliente+"', '"+fecha+"', '"+Total_Venta+"');";
+        connection.executeUpdate(add);
+        initSale();
+       ventas.addRow(new Object[] {Nombre_Cliente, fecha, Total_Venta});
+    }
+}
+
+
+
+
+
+
+
+
+    
     
 
 
-}
+
 

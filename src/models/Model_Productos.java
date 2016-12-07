@@ -143,7 +143,6 @@ public class Model_Productos {
     public void editProducto(int IDproducto, String producto, String descripcion, float precio_compra, float precio_venta, int existencias){
         String edit = "update productos set producto ='"+producto+"', descripcion ='"+descripcion+"', precio_compra ='"+precio_compra+"', precio_venta ='"+precio_venta+"', existencias ='"+existencias+"'" + "where id_productos =" +IDproducto;
         connection.executeUpdate(edit);
-        setValues();
         populateTable();
         initValues();
     }

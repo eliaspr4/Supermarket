@@ -47,17 +47,39 @@ public class LoginController implements ActionListener{
               mainView.jmi_login.setEnabled(false);
             if(loginModel.level.equals("Admin")); {
                 mainView.jm_options.setEnabled(true);
+                mainView.jmi_customers.setEnabled(true);
+                mainView.jmi_productos.setEnabled(true);
+                mainView.jmi_proveedores.setEnabled(true);
+                mainView.jmi_compras.setEnabled(true);
+                mainView.jmi_ventas.setEnabled(true);
                 mainView.jmi_users.setEnabled(true);
                 mainView.jm_operaciones.setEnabled(true);
                 mainView.jm_reportes.setEnabled(true);
-                mainView.jm_info.setEnabled(true);
-             if(loginModel.level.equals("Usuario frecuente"));{
+               
+               
+             if(loginModel.level.equals("Cliente"));{
                 mainView.jm_options.setEnabled(true);
                 mainView.jmi_users.setEnabled(true);
-                
-            } 
+                mainView.jm_operaciones.setEnabled(true);
+                mainView.jmi_customers.setEnabled(true);
+                mainView.jmi_productos.setEnabled(true);
+                mainView.jmi_proveedores.setEnabled(true);
+                mainView.jmi_salida.setEnabled(true);
+                }
              
+             if(loginModel.level.equals("Proveedor"));{
+                mainView.jm_options.setEnabled(true);
+                mainView.jmi_users.setEnabled(true);
+                mainView.jm_operaciones.setEnabled(true);
+                mainView.jmi_customers.setEnabled(true);
+                mainView.jmi_productos.setEnabled(true);
+                mainView.jmi_proveedores.setEnabled(true);
+                mainView.jmi_salida.setEnabled(true);
+                }
             }
+        }
+        else if(loginView.jtf_usuario.getText().isEmpty() || loginView.jpf_contraseña.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No puedes dejar campos vacíos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
         else {
             JOptionPane.showMessageDialog(null, "No estás registrado en el sistema. Usuario invalido");
