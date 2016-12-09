@@ -53,7 +53,7 @@ compras_generales.producto = compras_generales.producto group by compras_general
 					<textElement>
 						<font size="22" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Cherry SubTitle]]></text>
+					<text><![CDATA[Compras por producto]]></text>
 				</staticText>
 			</frame>
 			<frame>

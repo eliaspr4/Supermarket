@@ -65,14 +65,14 @@ public class LoginModel {
 
     
 public void initValues() {
-        String sql = "select * from login";
+        String sql = "select * from usuarios";
         connection.executeQuery(sql);
         connection.toNext();
     }
   
   public boolean login(String username, String password){
       boolean isAble = false;
-      String login = "select * from login where usuario = '"+username+"' and contrasena = '"+password+"';";
+      String login = "select * from usuarios where usuario = '"+username+"' and contrasena = '"+password+"';";
       connection.executeQuery(login);
       connection.toNext();
       status = connection.getString("estado");

@@ -20,7 +20,7 @@ public class VentasModel {
     public float Total_Venta;
     public Date dia = new Date();
     
-     public DefaultTableModel detalleVentas = new DefaultTableModel( new String []{"ID Producto","Producto","Precio venta","Cantidad","Subtotal"}, 0);
+    public DefaultTableModel detalleVentas = new DefaultTableModel( new String []{"ID Producto","Producto","Precio venta","Cantidad","Subtotal"}, 0);
     public DefaultTableModel ventas = new DefaultTableModel(new String []{"Nombre", "Fecha", "Total"}, 0);
     
     MyConnection connection = new MyConnection(3306, "localhost", "acme_store", "root", "");

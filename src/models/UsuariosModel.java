@@ -97,7 +97,7 @@ public void moveToFirst() {
     }
 
   public void addUser(String name, String username, String password, String level, String status) {
-        String add = "insert into usuarios (nombre, usuario, contrasena, nivel, estado)"
+        String add = "insert into usuarios (nombre, usuario, (MD5(contrasena)), nivel, estado)"
                    + "values ('"+name+"', '"+username+"', '"+password+"', '"+level+"', '"+status+"');";
        connection.executeUpdate(add);
          initValues();

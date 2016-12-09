@@ -2,7 +2,6 @@ drop database if exists acme_store;
 create database if not exists acme_store;
 use acme_store;
 
-
 /*Tabla de usuarios: */
 create table if not exists usuarios (
     nombre varchar(30) not null primary key,
@@ -89,12 +88,6 @@ create table if not exists compras (
     total_compra float(6) not null
 )  engine=InnoDB default charset=utf8;
 
-insert into login (nombre, usuario, contrasena, nivel, estado)
-values ('Calamardo', 'spongebob', md5('sammy'), 'Admin', 'Activo');
-insert into login (nombre, usuario, contrasena, nivel, estado)
-values ('Yadira', 'yadiragolosa69', md5('weed'), 'Cliente', 'Activo');
-insert into login (nombre, usuario, contrasena, nivel, estado)
-values ('Elías', 'eliaselfeo', md5('1234'), 'Proveedor', 'Inactivo');
 
 /*Registro de usuarios: */
 insert into usuarios (nombre, usuario, contrasena, nivel, estado)

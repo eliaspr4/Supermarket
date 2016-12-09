@@ -70,7 +70,7 @@ detalleCompras.id_detalleCompra;]]>
 					<textElement>
 						<font size="22" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Cherry SubTitle]]></text>
+					<text><![CDATA[Todas las compras]]></text>
 				</staticText>
 			</frame>
 			<frame>

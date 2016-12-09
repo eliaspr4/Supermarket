@@ -62,7 +62,7 @@ where compras_generales.producto like 'Cereal korn%' order by compras_generales.
 					<textElement>
 						<font size="22" isBold="false"/>
 					</textElement>
-					<text><![CDATA[Cherry SubTitle]]></text>
+					<text><![CDATA[Productos en particular]]></text>
 				</staticText>
 			</frame>
 			<frame>
